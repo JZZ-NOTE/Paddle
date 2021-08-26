@@ -207,7 +207,11 @@ struct PD_INFER_DECL AnalysisConfig {
   ///
   /// \param device_id device_id the NPU card to use (default is 0).
   ///
-  void EnableNpu(int device_id = 0);
+  void EnableNpu(int device_id = 0,
+                 std::string nnadapter_model_cache_dir_ = " ",
+                 std::string nnadapter_device_names_ = " ",
+                 std::string nnadapter_context_properties_ = " ",
+                 std::string nnadapter_subgraph_partition_config_buffer_ = " ");
   ///
   /// \brief A boolean state telling whether the GPU is turned on.
   ///
@@ -725,6 +729,12 @@ struct PD_INFER_DECL AnalysisConfig {
   std::string xpu_autotune_file_;
   std::string xpu_precision_;
   bool xpu_adaptive_seqlen_;
+
+  // NPU related
+  std::string nnadapter_model_cache_dir_;
+  std::string nnadapter_device_names_;
+  std::string nnadapter_context_properties_;
+  std::string nnadapter_subgraph_partition_config_buffer_;
 
   // mkldnn related.
   int mkldnn_cache_capacity_{10};

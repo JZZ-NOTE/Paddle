@@ -114,10 +114,18 @@ void AnalysisConfig::EnableXpu(int l3_workspace_size, bool locked,
   Update();
 }
 
-void AnalysisConfig::EnableNpu(int device_id) {
+void AnalysisConfig::EnableNpu(int device_id,
+                               std::string model_cache_dir,
+                               std::string device_names,
+                               std::string context_properties,
+                               std::string subgraph_partition_config_buffer) {
 #ifdef PADDLE_WITH_ASCEND_CL
   use_npu_ = true;
   npu_device_id_ = device_id;
+  nnadapter_model_cache_dir_ = model_cache_dir;
+  nnadapter_device_names_ = device_names;
+  nnadapter_context_properties_= context_properties;
+  nnadapter_subgraph_partition_config_buffer_ = subgraph_partition_config_buffer;
 #else
   LOG(ERROR) << "Please compile with npu to EnableNpu()";
   use_npu_ = false;
@@ -195,6 +203,10 @@ AnalysisConfig::AnalysisConfig(const AnalysisConfig &other) {
   // NPU related.
   CP_MEMBER(use_npu_);
   CP_MEMBER(npu_device_id_);
+  CP_MEMBER(nnadapter_model_cache_dir_);
+  CP_MEMBER(nnadapter_device_names_);
+  CP_MEMBER(nnadapter_context_properties_);
+  CP_MEMBER(nnadapter_subgraph_partition_config_buffer_);
 
   // profile related.
   CP_MEMBER(with_profile_);
@@ -620,6 +632,10 @@ std::string AnalysisConfig::SerializeInfoCache() {
 
   ss << use_npu_;
   ss << npu_device_id_;
+  ss << nnadapter_model_cache_dir_;
+  ss << nnadapter_device_names_;
+  ss << nnadapter_context_properties_;
+  ss << nnadapter_subgraph_partition_config_buffer_;
 
   ss << thread_local_stream_;
 
@@ -740,7 +756,7 @@ std::string AnalysisConfig::Summary() {
   // cpu info
   os.InsertRow(
       {"cpu_math_thread", std::to_string(cpu_math_library_num_threads_)});
-  os.InsertRow({"enable_mkldnn", use_mkldnn_ ? "true" : "false"});
+  os.InsertRow({"enable_mkdlnn", use_mkldnn_ ? "true" : "false"});
   os.InsertRow(
       {"mkldnn_cache_capacity", std::to_string(mkldnn_cache_capacity_)});
   os.InsetDivider();

@@ -592,6 +592,11 @@ void AnalysisPredictor::PrepareArgument() {
     argument_.SetXpuAutotuneFile(config_.xpu_autotune_file_);
     argument_.SetXpuPrecision(config_.xpu_precision_);
     argument_.SetXpuAdaptiveSeqlen(config_.xpu_adaptive_seqlen_);
+    // NPU related
+    argument_.SetNnadapterDeviceNames(config_.nnadapter_device_names_);
+    argument_.SetNnadapterContextProperties(config_.nnadapter_context_properties_);
+    argument_.SetNnadapterModelCacheDir(config_.nnadapter_model_cache_dir_);
+    argument_.SetNnadapterSubgraphPartitionConfigBuffer(config_.nnadapter_subgraph_partition_config_buffer_);
     LOG(INFO) << "Lite subgraph engine is enabled";
   }
 

@@ -18,6 +18,8 @@ if(NOT LINUX)
   return()
 endif()
 
+set(LITE_WITH_NPU OFF CACHE STRING "Enable compile Lite(NPU)" FORCE)
+
 if (LITE_WITH_XPU)
   add_definitions(-DLITE_SUBGRAPH_WITH_XPU)
   IF(WITH_AARCH64)
@@ -33,6 +35,10 @@ if (LITE_WITH_XPU)
   ELSE ()
     SET(XPU_SDK_ENV "ubuntu_x86_64")
   ENDIF()
+endif()
+
+if (LITE_WITH_NPU)
+  set(NPU_SDK_ROOT "/usr/local/Ascend/ascend-toolkit/latest" CACHE STRING "default NPU SDK ROOT" FORCE)
 endif()
 
 if (NOT LITE_SOURCE_DIR OR NOT LITE_BINARY_DIR)
@@ -67,6 +73,9 @@ if (NOT LITE_SOURCE_DIR OR NOT LITE_BINARY_DIR)
                            -DLITE_WITH_XPU=${LITE_WITH_XPU}
                            -DXPU_SDK_URL=${XPU_BASE_URL}
                            -DXPU_SDK_ENV=${XPU_SDK_ENV}
+                           -DLITE_WITH_NNADAPTER=${LITE_WITH_NPU}
+                           -DNNADAPTER_WITH_HUAWEI_ASCEND_NPU=${LITE_WITH_NPU}
+                           -DNNADAPTER_HUAWEI_ASCEND_NPU_SDK_ROOT=${NPU_SDK_ROOT}
                            -DLITE_WITH_CODE_META_INFO=OFF
                            -DLITE_WITH_ARM=ON)
     ExternalProject_Add(
@@ -94,6 +103,7 @@ if (NOT LITE_SOURCE_DIR OR NOT LITE_BINARY_DIR)
     )
   else()
     set(LITE_BUILD_COMMAND $(MAKE) publish_inference -j)
+    #(TODO): support npu.
     set(LITE_OPTIONAL_ARGS -DWITH_MKL=ON
                            -DLITE_WITH_CUDA=${WITH_GPU}
                            -DWITH_MKLDNN=OFF
@@ -146,6 +156,9 @@ endif()
 if (WITH_ARM)
   if(LITE_WITH_XPU)
     set(LITE_OUTPUT_BIN_DIR inference_lite_lib.armlinux.armv8.xpu)
+  elseif(LITE_WITH_NPU)
+    message("Enable LITE_WITH_NPU")
+    set(LITE_OUTPUT_BIN_DIR inference_lite_lib.armlinux.armv8.nnadapter)
   else()
     set(LITE_OUTPUT_BIN_DIR inference_lite_lib.armlinux.armv8)
   endif()

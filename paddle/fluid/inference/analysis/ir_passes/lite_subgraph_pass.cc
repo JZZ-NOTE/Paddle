@@ -250,6 +250,11 @@ void LiteSubgraphPass::SetUpEngine(
   std::string autotune_file = Get<std::string>("autotune_file");
   std::string precision = Get<std::string>("precision");
   bool adaptive_seqlen = Get<bool>("adaptive_seqlen");
+  // NPU Related
+  std::string model_cache_dir = Get<std::string>("model_cache_dir");
+  std::string device_names = Get<std::string>("device_names");
+  std::string context_properties = Get<std::string>("context_properties");
+  std::string subgraph_partition_config_buffer = Get<std::string>("subgraph_partition_config_buffer");
 
   lite_api::TargetType target_type;
   if (use_gpu) {
@@ -292,6 +297,12 @@ void LiteSubgraphPass::SetUpEngine(
   config.autotune_file = autotune_file;
   config.precision = precision;
   config.adaptive_seqlen = adaptive_seqlen;
+  // NPU Related
+  config.nnadapter_model_cache_dir = model_cache_dir;
+  config.nnadapter_device_names = device_names;
+  config.nnadapter_context_properties = context_properties;
+  config.nnadapter_subgraph_partition_config_buffer = subgraph_partition_config_buffer;
+
   if (dump_model) {
     lite::StrToBinaryFile("./model.bin", config.model);
     lite::StrToBinaryFile("./param.bin", config.param);
