@@ -114,22 +114,14 @@ void AnalysisConfig::EnableXpu(int l3_workspace_size, bool locked,
   Update();
 }
 
-void AnalysisConfig::EnableNpu(int device_id,
-                               std::string model_cache_dir,
-                               std::string device_names,
-                               std::string context_properties,
-                               std::string subgraph_partition_config_buffer) {
-//#ifdef PADDLE_WITH_ASCEND_CL
+void AnalysisConfig::EnableNpu(int device_id) {
+#ifdef PADDLE_WITH_ASCEND_CL
   use_npu_ = true;
   npu_device_id_ = device_id;
-  nnadapter_model_cache_dir_ = model_cache_dir;
-  nnadapter_device_names_ = device_names;
-  nnadapter_context_properties_= context_properties;
-  nnadapter_subgraph_partition_config_buffer_ = subgraph_partition_config_buffer;
-//#else
-//  LOG(ERROR) << "Please compile with npu to EnableNpu()";
-//  use_npu_ = false;
-//#endif
+#else
+  LOG(ERROR) << "Please compile with npu to EnableNpu()";
+  use_npu_ = false;
+#endif
 
   Update();
 }
@@ -203,10 +195,7 @@ AnalysisConfig::AnalysisConfig(const AnalysisConfig &other) {
   // NPU related.
   CP_MEMBER(use_npu_);
   CP_MEMBER(npu_device_id_);
-  CP_MEMBER(nnadapter_model_cache_dir_);
-  CP_MEMBER(nnadapter_device_names_);
-  CP_MEMBER(nnadapter_context_properties_);
-  CP_MEMBER(nnadapter_subgraph_partition_config_buffer_);
+  CP_MEMBER(npu_config_);
 
   // profile related.
   CP_MEMBER(with_profile_);
@@ -561,9 +550,9 @@ void AnalysisConfig::Update() {
                           "same analysis configuration."));
 #elif defined LITE_SUBGRAPH_WITH_NPU
 #else
-    PADDLE_THROW(platform::errors::Unavailable(
-        "You tried to use an NPU device, but Paddle was not compiled "
-        "with NPU-runtime."));
+  PADDLE_THROW(platform::errors::Unavailable(
+      "You tried to use an NPU device, but Paddle was not compiled "
+      "with NPU-runtime."));
 #endif
   }
 
@@ -757,7 +746,7 @@ std::string AnalysisConfig::Summary() {
   // cpu info
   os.InsertRow(
       {"cpu_math_thread", std::to_string(cpu_math_library_num_threads_)});
-  os.InsertRow({"enable_mkdlnn", use_mkldnn_ ? "true" : "false"});
+  os.InsertRow({"enable_mkldnn", use_mkldnn_ ? "true" : "false"});
   os.InsertRow(
       {"mkldnn_cache_capacity", std::to_string(mkldnn_cache_capacity_)});
   os.InsetDivider();
@@ -831,6 +820,52 @@ std::string AnalysisConfig::Summary() {
   os.InsertRow({"enable_log", with_glog_info_ ? "true" : "false"});
 
   return os.PrintTable();
+}
+
+LiteNNAdapterConfig &LiteNNAdapterConfig::SetDeviceNames(
+    const std::vector<std::string> &names) {
+  device_names = names;
+  return *this;
+}
+
+LiteNNAdapterConfig &LiteNNAdapterConfig::SetContextProperties(
+    const std::string &properties) {
+  context_properties = properties;
+  return *this;
+}
+
+LiteNNAdapterConfig &LiteNNAdapterConfig::SetModelCacheDir(
+    const std::string &dir) {
+  model_cache_dir = dir;
+  return *this;
+}
+
+LiteNNAdapterConfig &LiteNNAdapterConfig::SetModelCacheBuffers(
+    const std::string &model_cache_token,
+    const std::vector<char> &model_cache_buffer) {
+  PADDLE_ENFORCE_EQ(model_cache_token.empty(), false,
+                    platform::errors::InvalidArgument(
+                        "model_cache_token should not be empty."));
+  PADDLE_ENFORCE_EQ(model_cache_buffer.empty(), false,
+                    platform::errors::InvalidArgument(
+                        "model_cache_buffer should not be empty."));
+  PADDLE_ENFORCE_EQ(model_cache_buffers.count(model_cache_token), false,
+                    platform::errors::InvalidArgument(
+                        "model_cache_token has already been set."));
+
+  model_cache_buffers[model_cache_token] = model_cache_buffer;
+}
+
+LiteNNAdapterConfig &LiteNNAdapterConfig::SetSubgraphPartitionConfigPath(
+    const std::string &path) {
+  subgraph_partition_config_path = path;
+  return *this;
+}
+
+LiteNNAdapterConfig &SetSubgraphPartitionConfigBuffer(
+    const std::string &buffer) {
+  subgraph_partition_config_buffer = buffer;
+  return *this;
 }
 
 }  // namespace paddle

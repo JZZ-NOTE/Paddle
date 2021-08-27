@@ -233,10 +233,15 @@ struct Argument {
   DECL_ARGUMENT_FIELD(xpu_precision, XpuPrecision, std::string);
   DECL_ARGUMENT_FIELD(xpu_adaptive_seqlen, XpuAdaptiveSeqlen, bool);
 
-  DECL_ARGUMENT_FIELD(nnadapter_model_cache_dir, NnadapterModelCacheDir, std::string);
-  DECL_ARGUMENT_FIELD(nnadapter_device_names, NnadapterDeviceNames, std::string);
-  DECL_ARGUMENT_FIELD(nnadapter_context_properties, NnadapterContextProperties, std::string);
-  DECL_ARGUMENT_FIELD(nnadapter_subgraph_partition_config_buffer, NnadapterSubgraphPartitionConfigBuffer, std::string);
+  DECL_ARGUMENT_FIELD(use_npu, UseNpu, bool);
+  DECL_ARGUMENT_FIELD(nnadapter_model_cache_dir, NNAdapterModelCacheDir,
+                      std::string);
+  DECL_ARGUMENT_FIELD(nnadapter_device_names, NNadapterDeviceNames,
+                      std::string);
+  DECL_ARGUMENT_FIELD(nnadapter_context_properties, NNAdapterContextProperties,
+                      std::string);
+  DECL_ARGUMENT_FIELD(nnadapter_subgraph_partition_config_buffer,
+                      NNAdapterSubgraphPartitionConfigBuffer, std::string);
 
   // Memory optimized related.
   DECL_ARGUMENT_FIELD(enable_memory_optim, EnableMemoryOptim, bool);

@@ -18,8 +18,6 @@ if(NOT LINUX)
   return()
 endif()
 
-set(LITE_WITH_NPU ON CACHE STRING "Enable compile Lite(NPU)" FORCE)
-
 if (LITE_WITH_XPU)
   add_definitions(-DLITE_SUBGRAPH_WITH_XPU)
   IF(WITH_AARCH64)
@@ -39,7 +37,7 @@ endif()
 
 if (LITE_WITH_NPU)
   add_definitions(-DLITE_SUBGRAPH_WITH_NPU) 
-  set(NPU_SDK_ROOT "/usr/local/Ascend/ascend-toolkit/latest" CACHE STRING "default NPU SDK ROOT" FORCE)
+  set(NPU_SDK_ROOT "/usr/local/Ascend/ascend-toolkit/latest" CACHE STRING "default NPU SDK ROOT")
 endif()
 
 if (NOT LITE_SOURCE_DIR OR NOT LITE_BINARY_DIR)

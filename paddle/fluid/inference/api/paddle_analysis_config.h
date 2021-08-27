@@ -48,6 +48,45 @@ namespace paddle {
 class AnalysisPredictor;
 struct MkldnnQuantizerConfig;
 
+struct LiteNNAdapterConfig {
+  std::string model_cache_dir;
+  std::map<std::string, std::vector<char>> model_cache_buffers;
+  std::vector<std::string> device_names;
+  std::string context_properties;
+  std::string subgraph_partition_config_path;
+  std::string subgraph_partition_config_buffer;
+
+  LiteNNAdapterConfig& SetDeviceNames(const std::vector<std::string>& names);
+
+  LiteNNAdapterConfig& SetContextProperties(const std::string& properties);
+
+  LiteNNAdapterConfig& SetModelCacheDir(const std::string& dir);
+
+  LiteNNAdapterConfig& SetModelCacheBuffers(
+      const std::string& model_cache_token,
+      const std::vector<char>& model_cache_buffer);
+
+  LiteNNAdapterConfig& SetSubgraphPartitionConfigPath(const std::string& path);
+
+  LiteNNAdapterConfig& SetSubgraphPartitionConfigBuffer(
+      const std::string& buffer);
+};
+
+struct NPUConfig : public LiteNNAdapterConfig {
+  // for paddle npu
+  int device_id{0};
+  bool valid{false};
+
+  NPUConfig& SetDeviceId(int id) {
+    device_id = id;
+    return *this;
+  }
+  NPUConfig& SetValid(bool x) {
+    valid = x;
+    return *this;
+  }
+};
+
 ///
 /// \brief configuration manager for AnalysisPredictor.
 /// \since 1.7.0
@@ -207,11 +246,7 @@ struct PD_INFER_DECL AnalysisConfig {
   ///
   /// \param device_id device_id the NPU card to use (default is 0).
   ///
-  void EnableNpu(int device_id = 0,
-                 std::string nnadapter_model_cache_dir_ = " ",
-                 std::string nnadapter_device_names_ = " ",
-                 std::string nnadapter_context_properties_ = " ",
-                 std::string nnadapter_subgraph_partition_config_buffer_ = " ");
+  void EnableNpu(int device_id = 0);
   ///
   /// \brief A boolean state telling whether the GPU is turned on.
   ///
@@ -631,6 +666,8 @@ struct PD_INFER_DECL AnalysisConfig {
   ///
   std::string Summary();
 
+  NPUConfig& npu() { return npu_config_; }
+
  protected:
   // Update the config.
   void Update();
@@ -731,10 +768,11 @@ struct PD_INFER_DECL AnalysisConfig {
   bool xpu_adaptive_seqlen_;
 
   // NPU related
-  std::string nnadapter_model_cache_dir_;
-  std::string nnadapter_device_names_;
-  std::string nnadapter_context_properties_;
-  std::string nnadapter_subgraph_partition_config_buffer_;
+  // std::string nnadapter_model_cache_dir_;
+  // std::string nnadapter_device_names_;
+  // std::string nnadapter_context_properties_;
+  // std::string nnadapter_subgraph_partition_config_buffer_;
+  NPUConfig npu_config_;
 
   // mkldnn related.
   int mkldnn_cache_capacity_{10};

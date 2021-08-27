@@ -54,7 +54,7 @@ struct EngineConfig {
   // for cuda
   bool use_multi_stream{false};
 
-  // for npu
+  // for nnadapter or npu.
   std::string nnadapter_model_cache_dir;
   std::string nnadapter_device_names;
   std::string nnadapter_context_properties;

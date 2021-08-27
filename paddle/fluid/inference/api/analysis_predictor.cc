@@ -264,17 +264,30 @@ bool AnalysisPredictor::CreateExecutor() {
           "with WITH_XPU."));
 #endif  // PADDLE_WITH_XPU
     }
-  } else if (config_.use_npu()) {
-#ifdef PADDLE_WITH_ASCEND_CL
-    place_ = paddle::platform::NPUPlace(config_.npu_device_id());
-#elif defined(LITE_SUBGRAPH_WITH_NPU)
-    LOG(INFO) << "place is CPUPlace";
-    place_ = paddle::platform::CPUPlace();
+  } else if (config_.NPU().valid) {
+    if (config_.lite_engine_enabled()) {
+#ifdef LITE_SUBGRAPH_WITH_NPU
+      // Currently, Paddle-Lite's NPU user interface only supports the transfer
+      // of Host data pointers. If it is currently used as a subgraph, execution
+      // efficiency will be sacrificed, so it is temporarily set to cpu place.
+      // And, the current lite engine of xpu must execute all parts of the
+      // model.
+      place_ = paddle::platform::CPUPlace();
 #else
-    PADDLE_THROW(platform::errors::Unavailable(
-        "You tried to use NPU forward propagation, but Paddle was not compiled "
-        "with WITH_ASCEND_CL."));
-#endif
+      PADDLE_THROW(platform::errors::Unavailable(
+          "You tried to use an NPU lite engine, but Paddle was not compiled "
+          "with it."));
+#endif  // LITE_SUBGRAPH_WITH_NPU
+    } else {
+#ifdef PADDLE_WITH_ASCEND_CL
+      place_ = paddle::platform::NPUPlace(config_.npu_device_id());
+#else
+      PADDLE_THROW(platform::errors::Unavailable(
+          "You tried to use NPU forward propagation (inference without lite "
+          "engine), but Paddle was not compiled "
+          "with PADDLE_WITH_ASCEND_CL."));
+#endif  // PADDLE_WITH_ASCEND_CL
+    }
   } else {
     place_ = paddle::platform::CPUPlace();
   }
@@ -596,10 +609,12 @@ void AnalysisPredictor::PrepareArgument() {
     argument_.SetXpuPrecision(config_.xpu_precision_);
     argument_.SetXpuAdaptiveSeqlen(config_.xpu_adaptive_seqlen_);
     // NPU related
-    argument_.SetNnadapterDeviceNames(config_.nnadapter_device_names_);
-    argument_.SetNnadapterContextProperties(config_.nnadapter_context_properties_);
-    argument_.SetNnadapterModelCacheDir(config_.nnadapter_model_cache_dir_);
-    argument_.SetNnadapterSubgraphPartitionConfigBuffer(config_.nnadapter_subgraph_partition_config_buffer_);
+    argument_.SetUseNpu(config_.NPU().valid);
+    argument_.SetNNAdapterDeviceNames(config_.NPU().device_names);
+    argument_.SetNNAdapterContextProperties(config_.NPU().context_properties);
+    argument_.SetNNAdapterModelCacheDir(config_.NPU().model_cache_dir);
+    argument_.SetNNAdapterSubgraphPartitionConfigBuffer(
+        config_.NPU().subgraph_partition_config_buffer);
     LOG(INFO) << "Lite subgraph engine is enabled";
   }
 

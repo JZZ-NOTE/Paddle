@@ -240,9 +240,9 @@ void LiteSubgraphPass::SetUpEngine(
     *str = os.str();
   };
 
-//  bool use_gpu = Get<bool>("use_gpu");
+  //  bool use_gpu = Get<bool>("use_gpu");
   bool enable_int8 = Get<bool>("enable_int8");
-//  bool use_xpu = Get<bool>("use_xpu");
+  //  bool use_xpu = Get<bool>("use_xpu");
   int xpu_l3_workspace_size = Get<int>("xpu_l3_workspace_size");
   int cpu_math_library_num_threads = Get<int>("cpu_math_library_num_threads");
   bool locked = Get<bool>("locked");
@@ -251,24 +251,27 @@ void LiteSubgraphPass::SetUpEngine(
   std::string precision = Get<std::string>("precision");
   bool adaptive_seqlen = Get<bool>("adaptive_seqlen");
   // NPU Related
+  bool use_npu = Get<bool>("use_npu");
   std::string model_cache_dir = Get<std::string>("model_cache_dir");
   std::string device_names = Get<std::string>("device_names");
   std::string context_properties = Get<std::string>("context_properties");
-  std::string subgraph_partition_config_buffer = Get<std::string>("subgraph_partition_config_buffer");
+  std::string subgraph_partition_config_buffer =
+      Get<std::string>("subgraph_partition_config_buffer");
 
   lite_api::TargetType target_type;
-  target_type = TARGET(kNNAdapter);
-//  if (use_gpu) {
-//    target_type = TARGET(kCUDA);
-//  } else if (use_xpu) {
-//    target_type = TARGET(kXPU);
-//  } else {
-//#ifdef PADDLE_WITH_ARM
-//    target_type = TARGET(kARM);
-//#else
-//    target_type = TARGET(kX86);
-//#endif
-//  }
+  if (use_gpu) {
+    target_type = TARGET(kCUDA);
+  } else if (use_xpu) {
+    target_type = TARGET(kXPU);
+  } else if (use_npu) {
+    target_type = TARGET(kNNAdapter);
+  } else {
+#ifdef PADDLE_WITH_ARM
+    target_type = TARGET(kARM);
+#else
+    target_type = TARGET(kX86);
+#endif
+  }
 
   paddle::lite_api::PrecisionType precision_type =
       enable_int8 ? PRECISION(kInt8) : PRECISION(kFloat);
@@ -279,7 +282,6 @@ void LiteSubgraphPass::SetUpEngine(
       // Notice: The ordering here determines the device where the
       // input tensor of the Lite engine is located, and then affects
       // whether tensor sharing is feasible.
-      paddle::lite_api::Place({target_type, PRECISION(kInt8)}),
       paddle::lite_api::Place({target_type, precision_type}),
       paddle::lite_api::Place({target_type, PRECISION(kInt64)}),
       paddle::lite_api::Place({target_type, PRECISION(kFloat)}),
@@ -303,7 +305,8 @@ void LiteSubgraphPass::SetUpEngine(
   config.nnadapter_model_cache_dir = model_cache_dir;
   config.nnadapter_device_names = device_names;
   config.nnadapter_context_properties = context_properties;
-  config.nnadapter_subgraph_partition_config_buffer = subgraph_partition_config_buffer;
+  config.nnadapter_subgraph_partition_config_buffer =
+      subgraph_partition_config_buffer;
 
   if (dump_model) {
     lite::StrToBinaryFile("./model.bin", config.model);
