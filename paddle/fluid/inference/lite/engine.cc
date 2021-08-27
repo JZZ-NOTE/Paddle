@@ -26,6 +26,7 @@
 
 #include "paddle/fluid/inference/lite/engine.h"
 #include <utility>
+#include <iostream>
 
 namespace paddle {
 namespace inference {
@@ -70,10 +71,11 @@ paddle::lite_api::PaddlePredictor* EngineManager::Create(
 #endif
 
 #ifdef LITE_SUBGRAPH_WITH_NPU
-  lite_cxx_config.set_nnadapter_device_names(nnadapter_device_names);
-  lite_cxx_config.set_nnadapter_context_properties(nnadapter_context_properties);
-  lite_cxx_config.set_nnadapter_model_cache_dir(nnadapter_model_cache_dir);
-  lite_cxx_config.set_nnadapter_subgraph_partition_config_buffer(nnadapter_subgraph_partition_config_buffer);
+  lite_cxx_config.set_nnadapter_device_names({cfg.nnadapter_device_names});
+  lite_cxx_config.set_nnadapter_context_properties(cfg.nnadapter_context_properties);
+  lite_cxx_config.set_nnadapter_model_cache_dir(cfg.nnadapter_model_cache_dir);
+ // lite_cxx_config.set_nnadapter_subgraph_partition_config_buffer(cfg.nnadapter_subgraph_partition_config_buffer);
+  LOG(INFO) << "jzzzzzzzzzzzzzzzzzzzzzz: " <<cfg.nnadapter_device_names <<" " << cfg.nnadapter_context_properties <<" " <<cfg.nnadapter_model_cache_dir <<" " << cfg.nnadapter_subgraph_partition_config_buffer;
 #endif
   // create predictor
   std::shared_ptr<paddle::lite_api::PaddlePredictor> p =

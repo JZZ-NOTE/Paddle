@@ -119,17 +119,17 @@ void AnalysisConfig::EnableNpu(int device_id,
                                std::string device_names,
                                std::string context_properties,
                                std::string subgraph_partition_config_buffer) {
-#ifdef PADDLE_WITH_ASCEND_CL
+//#ifdef PADDLE_WITH_ASCEND_CL
   use_npu_ = true;
   npu_device_id_ = device_id;
   nnadapter_model_cache_dir_ = model_cache_dir;
   nnadapter_device_names_ = device_names;
   nnadapter_context_properties_= context_properties;
   nnadapter_subgraph_partition_config_buffer_ = subgraph_partition_config_buffer;
-#else
-  LOG(ERROR) << "Please compile with npu to EnableNpu()";
-  use_npu_ = false;
-#endif
+//#else
+//  LOG(ERROR) << "Please compile with npu to EnableNpu()";
+//  use_npu_ = false;
+//#endif
 
   Update();
 }
@@ -554,11 +554,12 @@ void AnalysisConfig::Update() {
   }
 
   if (use_npu_) {
-#ifdef PADDLE_WITH_ASCEND_CL
+#if defined PADDLE_WITH_ASCEND_CL
     PADDLE_ENFORCE_EQ(use_gpu_, false,
                       platform::errors::Unavailable(
                           "Currently, NPU and GPU cannot be enabled in the "
                           "same analysis configuration."));
+#elif defined LITE_SUBGRAPH_WITH_NPU
 #else
     PADDLE_THROW(platform::errors::Unavailable(
         "You tried to use an NPU device, but Paddle was not compiled "

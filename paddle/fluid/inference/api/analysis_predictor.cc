@@ -267,6 +267,9 @@ bool AnalysisPredictor::CreateExecutor() {
   } else if (config_.use_npu()) {
 #ifdef PADDLE_WITH_ASCEND_CL
     place_ = paddle::platform::NPUPlace(config_.npu_device_id());
+#elif defined(LITE_SUBGRAPH_WITH_NPU)
+    LOG(INFO) << "place is CPUPlace";
+    place_ = paddle::platform::CPUPlace();
 #else
     PADDLE_THROW(platform::errors::Unavailable(
         "You tried to use NPU forward propagation, but Paddle was not compiled "
