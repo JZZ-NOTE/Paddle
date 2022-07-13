@@ -54,17 +54,7 @@ void LogicalNotKernel(const Context& dev_ctx,
 }  // namespace phi
 
 #define REGISTER_LOGICAL_CPU_KERNEL(logical_and, func_type) \
-  PD_REGISTER_KERNEL(logical_and,                           \
-                     CPU,                                   \
-                     ALL_LAYOUT,                            \
-                     phi::Logical##func_type##Kernel,       \
-                     float,                                 \
-                     double,                                \
-                     bool,                                  \
-                     int64_t,                               \
-                     int,                                   \
-                     int8_t,                                \
-                     int16_t) {}
+  
 
 REGISTER_LOGICAL_CPU_KERNEL(logical_and, And)
 REGISTER_LOGICAL_CPU_KERNEL(logical_or, Or)

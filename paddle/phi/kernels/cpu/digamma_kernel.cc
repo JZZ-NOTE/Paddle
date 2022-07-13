@@ -19,5 +19,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/digamma_kernel_impl.h"
 
-PD_REGISTER_KERNEL(
-    digamma, CPU, ALL_LAYOUT, phi::DigammaKernel, float, double) {}
+

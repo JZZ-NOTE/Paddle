@@ -16,4 +16,4 @@
 
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(maxout, CPU, ALL_LAYOUT, phi::MaxOutKernel, float, double) {}
+

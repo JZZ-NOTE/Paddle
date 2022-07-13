@@ -94,12 +94,4 @@ void IndexSelectKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(index_select,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::IndexSelectKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   int,
-                   int64_t) {}
+

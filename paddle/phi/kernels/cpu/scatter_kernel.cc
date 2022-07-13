@@ -58,6 +58,4 @@ void ScatterKernel(const Context &ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    scatter, CPU, ALL_LAYOUT, phi::ScatterKernel, float, double, int, int64_t) {
-}
+

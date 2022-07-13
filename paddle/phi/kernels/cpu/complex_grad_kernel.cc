@@ -18,16 +18,6 @@
 #include "paddle/phi/common/complex.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(real_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::RealGradKernel,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(imag_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ImagGradKernel,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
+

@@ -101,13 +101,4 @@ void StackKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(stack,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::StackKernel,
-                   float,
-                   double,
-                   int64_t,
-                   int,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+

@@ -18,24 +18,8 @@
 
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(pool2d, CPU, ALL_LAYOUT, phi::Pool2dKernel, float, double) {}
-PD_REGISTER_KERNEL(max_pool2d_with_index,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MaxPool2dWithIndexKernel,
-                   float,
-                   double) {
-  kernel->OutputAt(1).SetDataType(
-      paddle::experimental::CppTypeToDataType<int>::Type());
-}
 
-PD_REGISTER_KERNEL(pool3d, CPU, ALL_LAYOUT, phi::Pool3dKernel, float, double) {}
-PD_REGISTER_KERNEL(max_pool3d_with_index,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MaxPool3dWithIndexKernel,
-                   float,
-                   double) {
-  kernel->OutputAt(1).SetDataType(
-      paddle::experimental::CppTypeToDataType<int>::Type());
-}
+
+
+
+

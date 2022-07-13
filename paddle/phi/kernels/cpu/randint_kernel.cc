@@ -57,8 +57,6 @@ void RandintKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    randint_raw, CPU, ALL_LAYOUT, phi::RandintRawKernel, int, int64_t) {}
 
-PD_REGISTER_KERNEL(randint, CPU, ALL_LAYOUT, phi::RandintKernel, int, int64_t) {
-}
+
+

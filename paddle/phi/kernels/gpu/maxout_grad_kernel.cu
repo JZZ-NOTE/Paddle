@@ -16,5 +16,4 @@
 
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(
-    maxout_grad, GPU, ALL_LAYOUT, phi::MaxOutGradKernel, float, double) {}
+

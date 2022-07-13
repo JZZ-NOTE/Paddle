@@ -349,9 +349,4 @@ void GridSampleGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(grid_sample_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::GridSampleGradKernel,
-                   float,
-                   double) {}
+

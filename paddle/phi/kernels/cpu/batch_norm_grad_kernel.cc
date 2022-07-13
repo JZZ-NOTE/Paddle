@@ -659,20 +659,8 @@ void BatchNormDoubleGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    batch_norm_grad, CPU, ALL_LAYOUT, phi::BatchNormGradKernel, float, double) {
-}
 
-PD_REGISTER_KERNEL(batch_norm_grad_raw,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::BatchNormGradRawKernel,
-                   float,
-                   double) {}
 
-PD_REGISTER_KERNEL(batch_norm_grad_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::BatchNormDoubleGradKernel,
-                   float,
-                   double) {}
+
+
+

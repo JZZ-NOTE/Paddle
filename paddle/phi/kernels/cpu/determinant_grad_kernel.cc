@@ -17,9 +17,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/determinant_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(determinant_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DeterminantGradKernel,
-                   float,
-                   double) {}
+

@@ -114,16 +114,4 @@ void ConcatKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(concat,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ConcatKernel,
-                   float,
-                   double,
-                   bool,
-                   int64_t,
-                   int,
-                   uint8_t,
-                   phi::dtype::float16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

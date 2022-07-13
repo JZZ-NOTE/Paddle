@@ -18,15 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/transpose_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(transpose_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TransposeGradKernel,
-                   bool,
-                   float,
-                   double,
-                   int32_t,
-                   int64_t,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

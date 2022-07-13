@@ -197,7 +197,7 @@ The size of each dimension of the parameters checked in the infer-shape.
 
 namespace ops = paddle::operators;
 
-REGISTER_OPERATOR(
+REGISTER_OPERATOR__(
     fc, ops::FCOp, ops::FCOpMaker,
     paddle::framework::EmptyGradOpMaker<paddle::framework::OpDesc>,
     paddle::framework::EmptyGradOpMaker<paddle::imperative::OpBase>);

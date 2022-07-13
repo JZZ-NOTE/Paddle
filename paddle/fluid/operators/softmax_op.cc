@@ -210,7 +210,7 @@ namespace ops = paddle::operators;
 
 DECLARE_INFER_SHAPE_FUNCTOR(softmax, SoftmaxInferShapeFunctor,
                             PD_INFER_META(phi::SoftmaxInferMeta));
-REGISTER_OPERATOR(softmax, ops::SoftmaxOp, ops::SoftmaxOpMaker,
+REGISTER_OPERATOR__(softmax, ops::SoftmaxOp, ops::SoftmaxOpMaker,
                   ops::SoftmaxOpInferVarType,
                   ops::SoftmaxOpGradMaker<paddle::framework::OpDesc>,
                   ops::SoftmaxOpGradMaker<paddle::imperative::OpBase>,

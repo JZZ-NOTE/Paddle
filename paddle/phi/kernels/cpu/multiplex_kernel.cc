@@ -55,11 +55,4 @@ void MultiplexKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(multiplex,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MultiplexKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

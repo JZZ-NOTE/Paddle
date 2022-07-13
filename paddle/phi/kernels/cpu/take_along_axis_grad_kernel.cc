@@ -60,12 +60,4 @@ void TakeAlongAxisGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(take_along_axis_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TakeAlongAxisGradKernel,
-                   float,
-                   double,
-                   int,
-                   uint8_t,
-                   int64_t) {}
+

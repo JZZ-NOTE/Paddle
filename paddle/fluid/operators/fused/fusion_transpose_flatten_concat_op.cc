@@ -118,7 +118,7 @@ class TransposeFlattenConcatFusionOpMaker
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OPERATOR(
+REGISTER_OPERATOR__(
     fusion_transpose_flatten_concat, ops::TransposeFlattenConcatFusionOp,
     ops::TransposeFlattenConcatFusionOpMaker,
     paddle::framework::EmptyGradOpMaker<paddle::framework::OpDesc>,

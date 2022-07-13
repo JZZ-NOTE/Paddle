@@ -141,11 +141,4 @@ void TopkGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(top_k_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TopkGradKernel,
-                   float,
-                   double,
-                   int32_t,
-                   int64_t) {}
+

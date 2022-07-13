@@ -49,9 +49,7 @@ void ConvInferKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    conv2d_infer, CPU, ALL_LAYOUT, phi::ConvInferKernel, float, double) {}
+
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(
-    conv2d_infer, GPU, ALL_LAYOUT, phi::ConvInferKernel, float, double) {}
+
 #endif

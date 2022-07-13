@@ -18,11 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/selected_rows/impl/clip_kernel_impl.h"
 
-PD_REGISTER_KERNEL(clip_sr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sr::ClipSparseKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

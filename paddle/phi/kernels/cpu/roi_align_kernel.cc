@@ -314,5 +314,4 @@ void RoiAlignKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    roi_align, CPU, ALL_LAYOUT, phi::RoiAlignKernel, float, double, int) {}
+

@@ -18,11 +18,4 @@ limitations under the License. */
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/increment_kernel_impl.h"
 
-PD_REGISTER_KERNEL(increment,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::IncrementKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

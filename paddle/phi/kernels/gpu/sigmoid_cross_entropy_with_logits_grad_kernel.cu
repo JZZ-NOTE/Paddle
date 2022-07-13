@@ -111,9 +111,4 @@ void SigmoidCrossEntropyWithLogitsGradKernel(const Context &dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(sigmoid_cross_entropy_with_logits_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::SigmoidCrossEntropyWithLogitsGradKernel,
-                   float,
-                   double) {}
+

@@ -19,26 +19,6 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/strided_slice_kernel_impl.h"
 
-PD_REGISTER_KERNEL(strided_slice_raw,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::StridedSliceRawKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(strided_slice_array,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::StridedSliceArrayKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
+

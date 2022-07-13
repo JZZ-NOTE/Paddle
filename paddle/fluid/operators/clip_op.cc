@@ -171,7 +171,7 @@ class ClipDoubleGradOpMaker : public framework::SingleGradOpMaker<T> {
 namespace ops = paddle::operators;
 DECLARE_INFER_SHAPE_FUNCTOR(clip, ClipInferShapeFunctor,
                             PD_INFER_META(phi::UnchangedInferMeta));
-REGISTER_OPERATOR(clip, ops::ClipOp, ops::ClipOpMaker<float>,
+REGISTER_OPERATOR__(clip, ops::ClipOp, ops::ClipOpMaker<float>,
                   ops::ClipGradOpMaker<paddle::framework::OpDesc>,
                   ops::ClipGradOpMaker<paddle::imperative::OpBase>,
                   ops::ClipInplaceInferer, ClipInferShapeFunctor);

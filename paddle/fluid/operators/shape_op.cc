@@ -85,7 +85,7 @@ namespace plat = paddle::platform;
 DECLARE_INFER_SHAPE_FUNCTOR(shape, ShapeInferShapeFunctor,
                             PD_INFER_META(phi::ShapeInferMeta));
 
-REGISTER_OPERATOR(
+REGISTER_OPERATOR__(
     shape, ops::ShapeOp, ops::ShapeOpMaker,
     paddle::framework::EmptyGradOpMaker<paddle::framework::OpDesc>,
     paddle::framework::EmptyGradOpMaker<paddle::imperative::OpBase>,

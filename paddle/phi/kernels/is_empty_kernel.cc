@@ -32,22 +32,8 @@ void IsEmptyKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(is_empty,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::IsEmptyKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(is_empty,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::IsEmptyKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+
 #endif

@@ -18,9 +18,4 @@
 #include "paddle/phi/backends/cpu/cpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(pixel_shuffle_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::PixelShuffleGradKernel,
-                   float,
-                   double) {}
+

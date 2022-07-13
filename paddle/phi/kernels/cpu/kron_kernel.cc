@@ -18,14 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/kron_kernel_impl.h"
 
-PD_REGISTER_KERNEL(kron,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::KronKernel,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

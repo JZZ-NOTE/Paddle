@@ -78,12 +78,4 @@ void TopkGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(top_k_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::TopkGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {}
+

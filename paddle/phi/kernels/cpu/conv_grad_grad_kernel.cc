@@ -60,13 +60,6 @@ void Conv3DGradGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    conv2d_grad_grad, CPU, ALL_LAYOUT, phi::ConvGradGradKernel, float, double) {
-}
 
-PD_REGISTER_KERNEL(conv3d_grad_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::Conv3DGradGradKernel,
-                   float,
-                   double) {}
+
+

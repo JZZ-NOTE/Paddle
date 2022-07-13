@@ -167,6 +167,6 @@ class DensityPriorBoxOpCUDAKernel : public framework::OpKernel<T> {
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OP_CUDA_KERNEL(density_prior_box,
+REGISTER_OP_CUDA_KERNEL__(density_prior_box,
                         ops::DensityPriorBoxOpCUDAKernel<float>,
                         ops::DensityPriorBoxOpCUDAKernel<double>);

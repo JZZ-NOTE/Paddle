@@ -54,46 +54,10 @@ void BitwiseNotKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(bitwise_and,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::BitwiseAndKernel,
-                   bool,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(bitwise_or,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::BitwiseOrKernel,
-                   bool,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(bitwise_xor,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::BitwiseXorKernel,
-                   bool,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(bitwise_not,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::BitwiseNotKernel,
-                   bool,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
+
+
+
+

@@ -154,7 +154,7 @@ namespace ops = paddle::operators;
 DECLARE_INFER_SHAPE_FUNCTOR(roi_align, RoiAlignInferShapeFunctor,
                             PD_INFER_META(phi::RoiAlignInferMeta));
 
-REGISTER_OPERATOR(roi_align, ops::ROIAlignOp, ops::ROIAlignOpMaker,
+REGISTER_OPERATOR__(roi_align, ops::ROIAlignOp, ops::ROIAlignOpMaker,
                   ops::ROIAlignGradMaker<paddle::framework::OpDesc>,
                   ops::ROIAlignGradMaker<paddle::imperative::OpBase>,
                   RoiAlignInferShapeFunctor);

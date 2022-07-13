@@ -133,8 +133,4 @@ void PsroiPoolGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    psroi_pool_grad, CPU, ALL_LAYOUT, phi::PsroiPoolGradKernel, float, double) {
-  kernel->InputAt(2).SetDataType(
-      paddle::experimental::CppTypeToDataType<int>::Type());
-}
+

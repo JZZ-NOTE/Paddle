@@ -34,20 +34,7 @@ void LogSoftmaxGradKernel(const Context &dev_ctx,
 }  // namespace phi
 
 #ifdef PADDLE_WITH_HIP
-PD_REGISTER_KERNEL(log_softmax_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::LogSoftmaxGradKernel,
-                   float,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+
 #else
-PD_REGISTER_KERNEL(log_softmax_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::LogSoftmaxGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+
 #endif

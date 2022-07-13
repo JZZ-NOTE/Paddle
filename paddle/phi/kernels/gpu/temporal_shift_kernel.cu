@@ -139,10 +139,4 @@ void TemporalShiftKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(temporal_shift,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::TemporalShiftKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

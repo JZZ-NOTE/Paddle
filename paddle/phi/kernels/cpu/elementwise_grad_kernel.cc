@@ -163,171 +163,31 @@ void MinimumGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(add_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::AddGradKernel,
-                   float,
-                   double,
-                   int16_t,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(add_double_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::AddDoubleGradKernel,
-                   float,
-                   double,
-                   int16_t,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(add_triple_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::AddTripleGradKernel,
-                   float,
-                   double,
-                   int16_t,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(subtract_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SubtractGradKernel,
-                   float,
-                   double,
-                   int16_t,
-                   int,
-                   int64_t,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(subtract_double_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SubtractDoubleGradKernel,
-                   float,
-                   double,
-                   int16_t,
-                   int,
-                   int64_t,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(divide_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DivideGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(divide_double_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DivideDoubleGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(multiply_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MultiplyGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(multiply_double_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MultiplyDoubleGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(multiply_triple_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MultiplyTripleGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(fmax_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ElementwiseFMaxGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(fmin_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ElementwiseFMinGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(maximum_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MaximumGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::bfloat16) {}
 
-PD_REGISTER_KERNEL(minimum_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MinimumGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::bfloat16) {}
-PD_REGISTER_KERNEL(elementwise_pow_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ElementwisePowGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

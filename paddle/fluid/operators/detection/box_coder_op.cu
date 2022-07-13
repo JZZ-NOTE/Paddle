@@ -206,7 +206,7 @@ class BoxCoderCUDAKernel : public framework::OpKernel<T> {
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OP_CUDA_KERNEL(
+REGISTER_OP_CUDA_KERNEL__(
     box_coder,
     ops::BoxCoderCUDAKernel<paddle::platform::CUDADeviceContext, float>,
     ops::BoxCoderCUDAKernel<paddle::platform::CUDADeviceContext, double>);

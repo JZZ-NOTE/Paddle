@@ -19,16 +19,4 @@
 #include "paddle/phi/common/bfloat16.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(transpose_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::TransposeGradKernel,
-                   bool,
-                   float,
-                   double,
-                   int32_t,
-                   int64_t,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

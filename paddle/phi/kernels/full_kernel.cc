@@ -38,28 +38,7 @@ void FullBatchSizeLikeKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(full_batch_size_like,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::FullBatchSizeLikeKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool) {
-  kernel->InputAt(0).SetBackend(phi::Backend::ALL_BACKEND);
-}
+
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(full_batch_size_like,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::FullBatchSizeLikeKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::float16) {
-  kernel->InputAt(0).SetBackend(phi::Backend::ALL_BACKEND);
-}
+
 #endif

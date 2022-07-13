@@ -18,4 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/log_loss_kernel_impl.h"
 
-PD_REGISTER_KERNEL(log_loss, GPU, ALL_LAYOUT, phi::LogLossKernel, float) {}
+

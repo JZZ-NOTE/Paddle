@@ -19,11 +19,4 @@
 #include "paddle/phi/core/dense_tensor.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(segment_pool,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::SegmentPoolKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

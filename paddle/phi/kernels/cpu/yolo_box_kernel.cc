@@ -124,5 +124,4 @@ void YoloBoxKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    yolo_box, CPU, ALL_LAYOUT, phi::YoloBoxKernel, float, double) {}
+

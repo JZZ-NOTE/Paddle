@@ -167,5 +167,4 @@ void NllLossGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    nll_loss_grad, CPU, ALL_LAYOUT, phi::NllLossGradKernel, float, double) {}
+

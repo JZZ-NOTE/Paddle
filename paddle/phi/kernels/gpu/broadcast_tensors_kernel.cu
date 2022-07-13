@@ -18,13 +18,4 @@
 #include "paddle/phi/common/float16.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(broadcast_tensors,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::BroadcastTensorsKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

@@ -322,7 +322,7 @@ DECLARE_INPLACE_OP_INFERER(SumInplaceInferer, {"X", "Out"});
 
 namespace ops = paddle::operators;
 
-REGISTER_OPERATOR(sum, ops::SumOp, ops::SumOpMaker, ops::SumGradDescMaker,
+REGISTER_OPERATOR__(sum, ops::SumOp, ops::SumOpMaker, ops::SumGradDescMaker,
                   ops::SumGradOpBaseMaker, ops::SumOpVarTypeInference,
                   ops::SumInplaceInferer);
 

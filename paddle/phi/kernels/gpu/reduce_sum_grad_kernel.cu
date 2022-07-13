@@ -67,16 +67,4 @@ void ReduceSumGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(sum_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ReduceSumGradKernel,
-                   bool,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

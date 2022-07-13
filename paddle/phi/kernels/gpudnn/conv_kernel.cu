@@ -449,62 +449,21 @@ void DepthwiseConvCudnnKernel(const Context& dev_ctx,
 }  // namespace phi
 
 #ifdef PADDLE_WITH_HIP
-PD_REGISTER_KERNEL(conv2d,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::ConvCudnnKernel,
-                   float,
-                   phi::dtype::float16) {}
 
-PD_REGISTER_KERNEL(conv3d,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Conv3DCudnnKernel,
-                   float,
-                   phi::dtype::float16) {}
 
-PD_REGISTER_KERNEL(depthwise_conv2d,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::DepthwiseConvCudnnKernel,
-                   float,
-                   phi::dtype::float16) {}
+
+
+
 
 #else
 #if CUDNN_VERSION_MIN(8, 1, 0)
-PD_REGISTER_KERNEL(conv2d,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::ConvCudnnKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
 
-PD_REGISTER_KERNEL(conv3d,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Conv3DCudnnKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+
+
 #else
-PD_REGISTER_KERNEL(conv2d,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::ConvCudnnKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
 
-PD_REGISTER_KERNEL(conv3d,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Conv3DCudnnKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+
+
 #endif
 
 #endif

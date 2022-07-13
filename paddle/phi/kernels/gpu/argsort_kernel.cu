@@ -299,12 +299,4 @@ void ArgsortKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(argsort,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ArgsortKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {}
+

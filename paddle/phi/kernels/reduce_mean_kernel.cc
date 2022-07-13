@@ -31,18 +31,8 @@ void MeanKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    mean, CPU, ALL_LAYOUT, phi::MeanKernel, float, double, bool) {}
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(mean,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::MeanKernel,
-                   float,
-                   double,
-                   bool,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {}
+
 #endif

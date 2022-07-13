@@ -140,10 +140,4 @@ void TemporalShiftGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(temporal_shift_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::TemporalShiftGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

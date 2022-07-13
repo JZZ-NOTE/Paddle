@@ -254,7 +254,7 @@ DECLARE_NO_NEED_BUFFER_VARS_INFERER(ExpandGradNoNeedBufVarsInferer, "X");
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OPERATOR(expand, ops::ExpandOp, ops::ExpandOpMaker,
+REGISTER_OPERATOR__(expand, ops::ExpandOp, ops::ExpandOpMaker,
                   ops::ExpandGradOpMaker<paddle::framework::OpDesc>,
                   ops::ExpandGradOpMaker<paddle::imperative::OpBase>);
 REGISTER_OPERATOR(expand_grad, ops::ExpandGradOp,
@@ -274,7 +274,7 @@ REGISTER_OP_CPU_KERNEL(
     ops::ExpandGradKernel<paddle::platform::CPUDeviceContext, int>,
     ops::ExpandGradKernel<paddle::platform::CPUDeviceContext, int64_t>);
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-REGISTER_OP_CUDA_KERNEL(
+REGISTER_OP_CUDA_KERNEL__(
     expand, ops::ExpandKernel<paddle::platform::CUDADeviceContext, float>,
     ops::ExpandKernel<paddle::platform::CUDADeviceContext, double>,
     ops::ExpandKernel<paddle::platform::CUDADeviceContext,

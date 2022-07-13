@@ -96,9 +96,4 @@ void CrossEntropyWithSoftmaxKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(cross_entropy_with_softmax,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::CrossEntropyWithSoftmaxKernel,
-                   float,
-                   double) {}
+

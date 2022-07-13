@@ -1009,7 +1009,7 @@ class MatMulOpDoubleGradMaker : public framework::SingleGradOpMaker<T> {
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OPERATOR(matmul, ops::MatMulOp, ops::MatMulOpMaker,
+REGISTER_OPERATOR__(matmul, ops::MatMulOp, ops::MatMulOpMaker,
                   ops::MatMulOpGradMaker<paddle::framework::OpDesc>,
                   ops::MatMulOpGradMaker<paddle::imperative::OpBase>);
 REGISTER_OPERATOR(matmul_grad, ops::MatMulOpGrad,
@@ -1030,7 +1030,7 @@ REGISTER_OP_CPU_KERNEL(
     ops::MatMulDoubleGradKernel<paddle::platform::CPUDeviceContext, double>);
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-REGISTER_OP_CUDA_KERNEL(
+REGISTER_OP_CUDA_KERNEL__(
     matmul, ops::MatMulKernel<paddle::platform::CUDADeviceContext, float>,
     ops::MatMulKernel<paddle::platform::CUDADeviceContext, double>,
     ops::MatMulKernel<paddle::platform::CUDADeviceContext,

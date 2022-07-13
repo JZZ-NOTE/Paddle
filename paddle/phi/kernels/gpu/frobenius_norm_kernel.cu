@@ -37,5 +37,4 @@ void FrobeniusNormKernel(const Context& dev_ctx,
 
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(
-    frobenius_norm, GPU, ALL_LAYOUT, phi::FrobeniusNormKernel, float, double) {}
+

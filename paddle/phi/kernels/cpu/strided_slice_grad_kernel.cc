@@ -19,26 +19,6 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/strided_slice_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(strided_slice_raw_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::StridedSliceRawGradKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(strided_slice_array_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::StridedSliceArrayGradKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
+

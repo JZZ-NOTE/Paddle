@@ -52,13 +52,4 @@ void RollGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(roll_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::RollGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

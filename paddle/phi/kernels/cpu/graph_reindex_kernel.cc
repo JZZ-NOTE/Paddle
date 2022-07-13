@@ -80,5 +80,4 @@ void GraphReindexKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    graph_reindex, CPU, ALL_LAYOUT, phi::GraphReindexKernel, int, int64_t) {}
+

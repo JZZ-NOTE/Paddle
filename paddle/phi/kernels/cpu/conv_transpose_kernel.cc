@@ -46,21 +46,6 @@ void DepthwiseConv2dTransposeKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(conv2d_transpose,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::Conv2dTransposeKernel,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(conv3d_transpose,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::Conv3dTransposeKernel,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(depthwise_conv2d_transpose,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DepthwiseConv2dTransposeKernel,
-                   float,
-                   double) {}
+
+
+

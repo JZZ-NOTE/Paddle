@@ -18,7 +18,7 @@ add_subdirectory(infermeta)
 # phi operator definitions
 add_subdirectory(ops)
 # phi tools
-add_subdirectory(tools)
+#add_subdirectory(tools)
 # phi tests
 add_subdirectory(tests)
 

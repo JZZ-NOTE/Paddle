@@ -34,27 +34,7 @@ void StridedSliceKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(strided_slice,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::StridedSliceKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(strided_slice,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::StridedSliceKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
 #endif

@@ -188,26 +188,8 @@ void SGDSparseParamSparseGradKernel(
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(sgd,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SGDDenseKernel,
-                   phi::dtype::bfloat16,
-                   float,
-                   double) {}
 
-PD_REGISTER_KERNEL(sgd_dense_param_sparse_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SGDDenseParamSparseGradKernel,
-                   phi::dtype::bfloat16,
-                   float,
-                   double) {}
 
-PD_REGISTER_KERNEL(sgd_sparse_param_sparse_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SGDSparseParamSparseGradKernel,
-                   phi::dtype::bfloat16,
-                   float,
-                   double) {}
+
+
+

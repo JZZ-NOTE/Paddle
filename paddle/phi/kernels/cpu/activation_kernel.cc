@@ -125,10 +125,10 @@ void HardSwishKernel(const Context& dev_ctx,
 }
 
 }  // namespace phi
-PD_REGISTER_KERNEL(relu, CPU, ALL_LAYOUT, phi::ReluKernel, float, double) {}
+
 
 #define PD_REGISTER_ACTIVATION_KERNEL(name, func) \
-  PD_REGISTER_KERNEL(name, CPU, ALL_LAYOUT, phi::func, float, double) {}
+  
 
 PD_REGISTER_ACTIVATION_KERNEL(sin, SinKernel)
 PD_REGISTER_ACTIVATION_KERNEL(cos, CosKernel)
@@ -157,18 +157,10 @@ PD_REGISTER_ACTIVATION_KERNEL(sqrt, SqrtKernel)
 PD_REGISTER_ACTIVATION_KERNEL(rsqrt, RsqrtKernel)
 PD_REGISTER_ACTIVATION_KERNEL(softplus, SoftplusKernel)
 
-PD_REGISTER_KERNEL(
-    exp, CPU, ALL_LAYOUT, phi::ExpKernel, float, double, int, int64_t) {}
-PD_REGISTER_KERNEL(expm1,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::Expm1Kernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
-PD_REGISTER_KERNEL(logit, CPU, ALL_LAYOUT, phi::LogitKernel, float, double) {}
-PD_REGISTER_KERNEL(
-    square, CPU, ALL_LAYOUT, phi::SquareKernel, float, double, int, int64_t) {}
+
+
+
+
 PD_REGISTER_ACTIVATION_KERNEL(sigmoid, SigmoidKernel)
 PD_REGISTER_ACTIVATION_KERNEL(logsigmoid, LogSigmoidKernel)
 PD_REGISTER_ACTIVATION_KERNEL(hard_sigmoid, HardSigmoidKernel)
@@ -181,5 +173,4 @@ PD_REGISTER_ACTIVATION_KERNEL(swish, SwishKernel)
 PD_REGISTER_ACTIVATION_KERNEL(round, RoundKernel)
 PD_REGISTER_ACTIVATION_KERNEL(floor, FloorKernel)
 PD_REGISTER_ACTIVATION_KERNEL(ceil, CeilKernel)
-PD_REGISTER_KERNEL(
-    pow, CPU, ALL_LAYOUT, phi::PowKernel, float, double, int, int64_t) {}
+

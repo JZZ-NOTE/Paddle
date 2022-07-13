@@ -68,8 +68,4 @@ void AccuracyRawKernel(const Context& dev_ctx,
 }  // namespace phi
 
 // TODO(add supported dtype.)
-PD_REGISTER_KERNEL(
-    accuracy, CPU, ALL_LAYOUT, phi::AccuracyRawKernel, float, double) {
-  kernel->InputAt(1).SetDataType(phi::DataType::INT64);
-  kernel->InputAt(2).SetDataType(phi::DataType::INT64);
-}
+

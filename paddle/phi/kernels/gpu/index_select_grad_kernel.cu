@@ -126,12 +126,4 @@ void IndexSelectGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(index_select_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::IndexSelectGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   int,
-                   int64_t) {}
+

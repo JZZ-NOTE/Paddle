@@ -18,5 +18,4 @@ limitations under the License. */
 #include "paddle/phi/backends/cpu/cpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(
-    multi_dot, CPU, ALL_LAYOUT, phi::MultiDotKernel, float, double) {}
+

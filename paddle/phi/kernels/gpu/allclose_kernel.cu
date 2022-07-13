@@ -90,7 +90,4 @@ void AllCloseKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    allclose, GPU, ALL_LAYOUT, phi::AllCloseKernel, float, double) {
-  kernel->OutputAt(0).SetDataType(phi::DataType::BOOL);
-}
+

@@ -139,7 +139,7 @@ namespace ops = paddle::operators;
 using CPU = paddle::platform::CPUDeviceContext;
 
 // cast use phi kernel, so no need to REGISTER_OP_CPU_KERNEL here.
-REGISTER_OPERATOR(cast, ops::CastOp,
+REGISTER_OPERATOR__(cast, ops::CastOp,
                   ops::CastOpGradMaker<paddle::framework::OpDesc>,
                   ops::CastOpGradMaker<paddle::imperative::OpBase>,
                   ops::CastOpProtoMaker);

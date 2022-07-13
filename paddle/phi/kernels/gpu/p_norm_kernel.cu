@@ -128,11 +128,4 @@ void PNormKernel(const Context& dev_ctx,
 }
 }  // namespace phi
 
-PD_REGISTER_KERNEL(p_norm,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::PNormKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+

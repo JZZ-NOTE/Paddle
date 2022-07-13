@@ -58,5 +58,4 @@ void GatherTreeKernel(const Context &dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    gather_tree, CPU, ALL_LAYOUT, phi::GatherTreeKernel, int, int64_t) {}
+

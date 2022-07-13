@@ -17,10 +17,4 @@
 #include "paddle/phi/backends/cpu/cpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(atan2_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::Atan2GradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

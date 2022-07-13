@@ -18,12 +18,6 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/rmsprop_kernel_impl.h"
 
-PD_REGISTER_KERNEL(
-    rmsprop, GPU, ALL_LAYOUT, phi::RmspropDenseKernel, float, double) {}
 
-PD_REGISTER_KERNEL(rmsprop_dense_param_sparse_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::RmspropSparseKernel,
-                   float,
-                   double) {}
+
+

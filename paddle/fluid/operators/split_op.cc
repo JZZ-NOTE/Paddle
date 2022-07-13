@@ -171,6 +171,6 @@ Example:
 
 namespace ops = paddle::operators;
 
-REGISTER_OPERATOR(split, ops::SplitOp, ops::SplitOpMaker,
+REGISTER_OPERATOR__(split, ops::SplitOp, ops::SplitOpMaker,
                   ops::SplitGradMaker<paddle::framework::OpDesc>,
                   ops::SplitGradMaker<paddle::imperative::OpBase>);

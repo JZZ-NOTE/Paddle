@@ -38,86 +38,14 @@ void SparseCooToDenseGradKernel(const Context& dev_ctx,
 }  // namespace sparse
 }  // namespace phi
 
-PD_REGISTER_KERNEL(coo_values_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::CooValuesGradKernel,
-                   float,
-                   double,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
 
-PD_REGISTER_KERNEL(sparse_coo_to_dense_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseCooToDenseGradKernel,
-                   float,
-                   double,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
 
-PD_REGISTER_KERNEL(sparse_coo_tensor_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseCooTensorGradKernel,
-                   float,
-                   double,
-                   uint8_t,
-                   int16_t,
-                   int,
-                   int64_t) {
-  kernel->InputAt(1).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
+
+
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(coo_values_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sparse::CooValuesGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
-PD_REGISTER_KERNEL(sparse_coo_to_dense_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseCooToDenseGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
-PD_REGISTER_KERNEL(sparse_coo_tensor_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseCooTensorGradKernel,
-                   float,
-                   double,
-                   uint8_t,
-                   int16_t,
-                   int,
-                   int64_t) {
-  kernel->InputAt(1).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
+
+
+
 #endif

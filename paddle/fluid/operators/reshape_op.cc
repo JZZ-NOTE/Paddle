@@ -630,7 +630,7 @@ DECLARE_NO_NEED_BUFFER_VARS_INFERER(ReshapeDoubleGradOpNoNeedBufferVarInferer,
 namespace ops = paddle::operators;
 namespace plat = paddle::platform;
 
-REGISTER_OPERATOR(
+REGISTER_OPERATOR__(
     reshape, ops::ReshapeOp, ops::ReshapeOpMaker,
     paddle::framework::DefaultGradOpMaker<paddle::framework::OpDesc, true>,
     paddle::framework::DefaultGradOpMaker<paddle::imperative::OpBase, true>,
@@ -648,7 +648,7 @@ REGISTER_OP_CPU_KERNEL_FUNCTOR(reshape_grad, float, ops::ReshapeGradKernel,
                                ops::ReshapeGradKernel, int64_t,
                                ops::ReshapeGradKernel);
 
-REGISTER_OPERATOR(reshape2, ops::Reshape2Op, ops::Reshape2OpMaker,
+REGISTER_OPERATOR__(reshape2, ops::Reshape2Op, ops::Reshape2OpMaker,
                   ops::Reshape2GradMaker<paddle::framework::OpDesc>,
                   ops::Reshape2GradMaker<paddle::imperative::OpBase>,
                   ops::ReshapeOpInplaceInferer);
@@ -667,7 +667,7 @@ REGISTER_OPERATOR(reshape2_grad_grad, ops::Reshape2DoubleGradOp,
                   Reshape2DoubleGradInferShapeFunctor);
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-REGISTER_OP_CUDA_KERNEL_FUNCTOR(reshape, float, ops::ReshapeKernel, double,
+REGISTER_OP_CUDA_KERNEL_FUNCTOR__(reshape, float, ops::ReshapeKernel, double,
                                 ops::ReshapeKernel, int16_t, ops::ReshapeKernel,
                                 int, ops::ReshapeKernel, uint8_t,
                                 ops::ReshapeKernel, int64_t, ops::ReshapeKernel,

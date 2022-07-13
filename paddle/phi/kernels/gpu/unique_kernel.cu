@@ -602,14 +602,6 @@ void UniqueKernel(const Context& context,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    unique, GPU, ALL_LAYOUT, phi::UniqueKernel, float, double, int64_t, int) {}
 
-PD_REGISTER_KERNEL(unique_raw,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::UniqueRawKernel,
-                   float,
-                   double,
-                   int64_t,
-                   int) {}
+
+

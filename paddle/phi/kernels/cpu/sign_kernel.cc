@@ -21,4 +21,4 @@ limitations under the License. */
 // See Note [ Why still include the fluid headers? ]
 #include "paddle/phi/common/bfloat16.h"
 
-PD_REGISTER_KERNEL(sign, CPU, ALL_LAYOUT, phi::SignKernel, float, double) {}
+

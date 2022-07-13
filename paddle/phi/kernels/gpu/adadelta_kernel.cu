@@ -18,5 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/adadelta_kernel_impl.h"
 
-PD_REGISTER_KERNEL(
-    adadelta, GPU, ALL_LAYOUT, phi::AdadeltaKernel, float, double) {}
+

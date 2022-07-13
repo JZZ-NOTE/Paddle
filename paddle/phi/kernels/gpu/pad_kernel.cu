@@ -18,14 +18,4 @@
 #include "paddle/phi/kernels/impl/pad_kernel_impl.h"
 #include "paddle/phi/kernels/pad_kernel.h"
 
-PD_REGISTER_KERNEL(pad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::PadKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

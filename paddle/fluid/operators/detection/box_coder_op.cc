@@ -229,7 +229,7 @@ box will broadcast to target box along the assigned axis.
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OPERATOR(
+REGISTER_OPERATOR__(
     box_coder, ops::BoxCoderOp, ops::BoxCoderOpMaker,
     paddle::framework::EmptyGradOpMaker<paddle::framework::OpDesc>,
     paddle::framework::EmptyGradOpMaker<paddle::imperative::OpBase>);

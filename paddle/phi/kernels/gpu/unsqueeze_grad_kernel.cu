@@ -18,19 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/unsqueeze_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(unsqueeze_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::UnsqueezeGradKernel,
-                   phi::dtype::bfloat16,
-                   phi::dtype::float16,
-                   bool,
-                   int,
-                   int16_t,
-                   uint8_t,
-                   int8_t,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>,
-                   float,
-                   double) {}
+

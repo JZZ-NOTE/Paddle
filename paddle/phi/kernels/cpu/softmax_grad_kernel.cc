@@ -18,5 +18,4 @@ limitations under the License. */
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/softmax_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(
-    softmax_grad, CPU, ALL_LAYOUT, phi::SoftmaxGradKernel, float, double) {}
+

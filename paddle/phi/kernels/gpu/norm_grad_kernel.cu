@@ -111,10 +111,4 @@ void NormGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(norm_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::NormGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

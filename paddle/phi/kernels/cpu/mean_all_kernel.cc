@@ -34,12 +34,4 @@ void MeanAllKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(mean_all,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MeanAllKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

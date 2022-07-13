@@ -46,11 +46,4 @@ void WhereGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(where_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::WhereGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

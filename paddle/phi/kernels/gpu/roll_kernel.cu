@@ -78,13 +78,4 @@ void RollKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(roll,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::RollKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

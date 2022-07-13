@@ -89,15 +89,8 @@ void Conv3DGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    conv2d_grad, CPU, ALL_LAYOUT, phi::ConvGradKernel, float, double) {}
 
-PD_REGISTER_KERNEL(depthwise_conv2d_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DepthwiseConvGradKernel,
-                   float,
-                   double) {}
 
-PD_REGISTER_KERNEL(
-    conv3d_grad, CPU, ALL_LAYOUT, phi::Conv3DGradKernel, float, double) {}
+
+
+

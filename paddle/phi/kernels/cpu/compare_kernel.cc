@@ -71,73 +71,11 @@ inline void CompareAllKernelImpl(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(less_than,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::LessThanKernel,
-                   bool,
-                   int16_t,
-                   int,
-                   int64_t,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(less_equal,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::LessEqualKernel,
-                   bool,
-                   int16_t,
-                   int,
-                   int64_t,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(greater_than,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::GreaterThanKernel,
-                   bool,
-                   int16_t,
-                   int,
-                   int64_t,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(greater_equal,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::GreaterEqualKernel,
-                   bool,
-                   int16_t,
-                   int,
-                   int64_t,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(equal,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::EqualKernel,
-                   bool,
-                   int16_t,
-                   int,
-                   int64_t,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(not_equal,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::NotEqualKernel,
-                   bool,
-                   int16_t,
-                   int,
-                   int64_t,
-                   float,
-                   double) {}
 
-PD_REGISTER_KERNEL(equal_all,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::EqualAllKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double) {}
+
+
+
+
+
+
+

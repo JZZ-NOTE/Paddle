@@ -102,11 +102,4 @@ void IndexSampleKernel(const Context& ctx,
 }
 }  // namespace phi
 
-PD_REGISTER_KERNEL(index_sample,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::IndexSampleKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

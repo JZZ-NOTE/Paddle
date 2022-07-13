@@ -18,11 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/reduce_prod_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(prod_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ReduceProdGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

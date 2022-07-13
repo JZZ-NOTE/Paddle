@@ -70,13 +70,4 @@ void GatherGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(gather_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::GatherGradKernel,
-                   float,
-                   double,
-                   int,
-                   uint8_t,
-                   int64_t,
-                   phi::dtype::bfloat16) {}
+

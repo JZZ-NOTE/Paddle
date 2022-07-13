@@ -184,7 +184,7 @@ namespace ops = paddle::operators;
 DECLARE_INFER_SHAPE_FUNCTOR(deformable_conv, DeformableConvInferShapeFunctor,
                             PD_INFER_META(phi::DeformableConvInferMeta));
 
-REGISTER_OPERATOR(deformable_conv, ops::DeformableConvOp,
+REGISTER_OPERATOR__(deformable_conv, ops::DeformableConvOp,
                   ops::DeformableConvOpMaker,
                   ops::DeformableConvGradOpMaker<paddle::framework::OpDesc>,
                   ops::DeformableConvGradOpMaker<paddle::imperative::OpBase>,

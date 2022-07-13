@@ -18,11 +18,4 @@
 #include "paddle/phi/backends/gpu/gpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(meshgrid_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::MeshgridGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

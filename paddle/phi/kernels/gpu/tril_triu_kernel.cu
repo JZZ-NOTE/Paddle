@@ -17,13 +17,4 @@
 #include "paddle/phi/backends/gpu/gpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(tril_triu,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::TrilTriuKernel,
-                   bool,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {}
+

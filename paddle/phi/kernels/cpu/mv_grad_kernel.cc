@@ -68,5 +68,4 @@ void MvGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(mv_grad, CPU, ALL_LAYOUT, phi::MvGradKernel, float, double) {
-}
+

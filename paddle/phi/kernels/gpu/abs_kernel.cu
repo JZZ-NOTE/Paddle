@@ -52,14 +52,4 @@ void AbsKernel(const Context& ctx, const DenseTensor& x, DenseTensor* out) {
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(abs,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::AbsKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

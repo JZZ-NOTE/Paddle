@@ -1074,44 +1074,11 @@ using float16 = phi::dtype::float16;
 
 #ifdef PADDLE_WITH_HIP
 // MIOPEN do not support double
-PD_REGISTER_KERNEL(conv2d_transpose_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Conv2dTransposeGradGPUDNNKernel,
-                   float,
-                   float16) {}
-PD_REGISTER_KERNEL(conv2d_transpose_grad_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Conv2dTransposeDoubleGradGPUDNNKernel,
-                   float,
-                   float16) {}
-PD_REGISTER_KERNEL(conv3d_transpose_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Conv3dTransposeGradGPUDNNKernel,
-                   float,
-                   float16) {}
+
+
+
 #else
-PD_REGISTER_KERNEL(conv2d_transpose_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Conv2dTransposeGradGPUDNNKernel,
-                   float,
-                   double,
-                   float16) {}
-PD_REGISTER_KERNEL(conv2d_transpose_grad_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Conv2dTransposeDoubleGradGPUDNNKernel,
-                   float,
-                   double,
-                   float16) {}
-PD_REGISTER_KERNEL(conv3d_transpose_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Conv3dTransposeGradGPUDNNKernel,
-                   float,
-                   double,
-                   float16) {}
+
+
+
 #endif

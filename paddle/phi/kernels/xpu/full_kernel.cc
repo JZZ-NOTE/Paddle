@@ -117,29 +117,6 @@ void FullLikeKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(full,
-                   XPU,
-                   ALL_LAYOUT,
-                   phi::FullKernel,
-                   float,
-                   double,
-                   uint8_t,
-                   int16_t,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
 
-PD_REGISTER_KERNEL(full_like,
-                   XPU,
-                   ALL_LAYOUT,
-                   phi::FullLikeKernel,
-                   float,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {
-  kernel->InputAt(0).SetBackend(phi::Backend::ALL_BACKEND);
-}
+
+

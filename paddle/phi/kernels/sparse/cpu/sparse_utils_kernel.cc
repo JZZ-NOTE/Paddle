@@ -287,122 +287,20 @@ void SparseCooToDenseKernel(const Context& dev_ctx,
 }  // namespace sparse
 }  // namespace phi
 
-PD_REGISTER_KERNEL(dense_to_sparse_coo,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::DenseToSparseCooKernel,
-                   float,
-                   double,
-                   paddle::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(sparse_csr_to_coo,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseCsrToCooKernel,
-                   float,
-                   double,
-                   paddle::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(sparse_coo_to_csr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseCooToCsrKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(dense_to_sparse_csr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::DenseToSparseCsrKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(sparse_coo_to_dense,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseCooToDenseKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(sparse_csr_to_dense,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseCsrToDenseKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(coo_values,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::CooValuesKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
 
-PD_REGISTER_KERNEL(csr_values,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::CsrValuesKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
 
-PD_REGISTER_KERNEL(sparse_coo_tensor,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseCooTensorKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
+
+
+
+
+
+
+
+
+

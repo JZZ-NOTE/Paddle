@@ -15,5 +15,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/poisson_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(
-    poisson_grad, CPU, ALL_LAYOUT, phi::PoissonGradKernel, float, double) {}
+

@@ -64,14 +64,4 @@ void FlipKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(flip,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::FlipKernel,
-                   float,
-                   double,
-                   int32_t,
-                   int64_t,
-                   bool,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

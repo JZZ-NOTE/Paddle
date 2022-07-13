@@ -33,5 +33,4 @@ void MinRawKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    min_raw, GPU, ALL_LAYOUT, phi::MinRawKernel, float, double, int, int64_t) {}
+

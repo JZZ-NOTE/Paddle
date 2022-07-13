@@ -58,11 +58,4 @@ void MaskedSelectGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(masked_select_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::MaskedSelectGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

@@ -109,10 +109,4 @@ void SparseWeightEmbeddingKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(sparse_weight_embedding,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SparseWeightEmbeddingKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16) {}
+

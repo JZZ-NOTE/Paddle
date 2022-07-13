@@ -112,20 +112,6 @@ void UniqueRawKernel(const Context& context,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(unique,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::UniqueKernel,
-                   float,
-                   double,
-                   int32_t,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(unique_raw,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::UniqueRawKernel,
-                   float,
-                   double,
-                   int32_t,
-                   int64_t) {}
+
+

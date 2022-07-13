@@ -18,12 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/tile_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(tile_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TileGradKernel,
-                   bool,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

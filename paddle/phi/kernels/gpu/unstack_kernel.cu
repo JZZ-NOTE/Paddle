@@ -18,12 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/unstack_kernel_impl.h"
 
-PD_REGISTER_KERNEL(unstack,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::UnStackKernel,
-                   float,
-                   double,
-                   int64_t,
-                   int,
-                   phi::dtype::float16) {}
+

@@ -80,13 +80,8 @@ void Conv3DKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(conv2d, CPU, ALL_LAYOUT, phi::ConvKernel, float, double) {}
 
-PD_REGISTER_KERNEL(depthwise_conv2d,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DepthwiseConvKernel,
-                   float,
-                   double) {}
 
-PD_REGISTER_KERNEL(conv3d, CPU, ALL_LAYOUT, phi::Conv3DKernel, float, double) {}
+
+
+

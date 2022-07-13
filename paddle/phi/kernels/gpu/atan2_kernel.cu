@@ -17,12 +17,4 @@
 #include "paddle/phi/backends/gpu/gpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(atan2,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Atan2Kernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   int,
-                   int64_t) {}
+

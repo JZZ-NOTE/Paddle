@@ -49,12 +49,4 @@ void TakeAlongAxisKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(take_along_axis,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TakeAlongAxisKernel,
-                   float,
-                   double,
-                   int,
-                   uint8_t,
-                   int64_t) {}
+

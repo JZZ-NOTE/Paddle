@@ -236,15 +236,13 @@ void HardSwishGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    relu_grad, CPU, ALL_LAYOUT, phi::ReluGradKernel, float, double) {}
+
 
 #define PD_REGISTER_ACTIVATION_GRAD_KERNEL(name, func) \
-  PD_REGISTER_KERNEL(name, CPU, ALL_LAYOUT, phi::func, float, double) {}
+  
 
 #define PD_REGISTER_ACTIVATION_DOUBLE_GRAD_KERNEL(name, func) \
-  PD_REGISTER_KERNEL(                                         \
-      name, CPU, ALL_LAYOUT, phi::func, float, double, phi::dtype::float16) {}
+  
 
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(sin_grad, SinGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(cos_grad, CosGradKernel)
@@ -282,41 +280,14 @@ PD_REGISTER_ACTIVATION_DOUBLE_GRAD_KERNEL(leaky_relu_double_grad,
                                           LeakyReluDoubleGradKernel)
 PD_REGISTER_ACTIVATION_DOUBLE_GRAD_KERNEL(elu_double_grad, EluDoubleGradKernel)
 
-PD_REGISTER_KERNEL(tanh_triple_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TanhTripleGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
 
-PD_REGISTER_KERNEL(exp_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ExpGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(expm1_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::Expm1GradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
 
-PD_REGISTER_KERNEL(
-    logit_grad, CPU, ALL_LAYOUT, phi::LogitGradKernel, float, double) {}
-PD_REGISTER_KERNEL(square_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SquareGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+
+
+
+
+
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(sigmoid_grad, SigmoidGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(sigmoid_double_grad, SigmoidDoubleGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(sigmoid_triple_grad, SigmoidTripleGradKernel)
@@ -333,11 +304,4 @@ PD_REGISTER_ACTIVATION_GRAD_KERNEL(round_grad, RoundGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(floor_grad, FloorGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(ceil_grad, CeilGradKernel)
 
-PD_REGISTER_KERNEL(pow_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::PowGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

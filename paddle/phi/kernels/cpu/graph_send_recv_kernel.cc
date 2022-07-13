@@ -154,11 +154,4 @@ void GraphSendRecvKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(graph_send_recv,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::GraphSendRecvKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

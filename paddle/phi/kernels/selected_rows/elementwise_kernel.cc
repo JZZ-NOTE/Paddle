@@ -60,56 +60,10 @@ void MultiplyKernel(const Context& dev_ctx,
 using complex64 = ::phi::dtype::complex<float>;
 using complex128 = ::phi::dtype::complex<double>;
 
-PD_REGISTER_KERNEL(multiply_raw_sr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sr::MultiplyRawKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::bfloat16,
-                   complex64,
-                   complex128) {}
-PD_REGISTER_KERNEL(multiply_sr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sr::MultiplyKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::bfloat16,
-                   complex64,
-                   complex128) {}
+
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(multiply_raw_sr,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sr::MultiplyRawKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::bfloat16,
-                   phi::dtype::float16,
-                   complex64,
-                   complex128) {}
-PD_REGISTER_KERNEL(multiply_sr,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sr::MultiplyKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::bfloat16,
-                   phi::dtype::float16,
-                   complex64,
-                   complex128) {}
+
+
 #endif

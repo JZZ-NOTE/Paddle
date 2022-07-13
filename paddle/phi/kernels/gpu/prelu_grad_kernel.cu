@@ -174,10 +174,4 @@ void PReluGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(prelu_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::PReluGradKernel,
-                   float,
-                   phi::dtype::float16,
-                   double) {}
+

@@ -157,7 +157,4 @@ void RoiPoolKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    roi_pool, CPU, ALL_LAYOUT, phi::RoiPoolKernel, float, double, int) {
-  kernel->OutputAt(1).SetDataType(phi::DataType::INT64);
-}
+

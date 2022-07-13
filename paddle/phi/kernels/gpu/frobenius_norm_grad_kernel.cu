@@ -17,9 +17,4 @@
 
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(frobenius_norm_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::FrobeniusNormGradKernel,
-                   float,
-                   double) {}
+

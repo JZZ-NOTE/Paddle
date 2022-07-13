@@ -154,12 +154,4 @@ void DiagonalKernel(const Context& dev_ctx,
 }
 }  // namespace phi
 
-PD_REGISTER_KERNEL(diagonal,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::DiagonalKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool) {}
+

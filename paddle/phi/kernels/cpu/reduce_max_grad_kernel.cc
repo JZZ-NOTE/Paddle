@@ -18,11 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/reduce_max_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(max_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ReduceMaxGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

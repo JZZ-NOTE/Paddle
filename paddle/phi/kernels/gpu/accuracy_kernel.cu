@@ -108,13 +108,4 @@ void AccuracyRawKernel(const Context& dev_ctx,
 
 // FIXME(typhoonzero): types of T is for inference data.
 // label data is always int64
-PD_REGISTER_KERNEL(accuracy,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::AccuracyRawKernel,
-                   phi::dtype::float16,
-                   float,
-                   double) {
-  kernel->InputAt(1).SetDataType(phi::DataType::INT64);
-  kernel->InputAt(2).SetDataType(phi::DataType::INT64);
-}
+

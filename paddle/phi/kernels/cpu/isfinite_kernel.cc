@@ -31,32 +31,8 @@ inline void IsfiniteKernelImpl(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(isinf,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::IsinfKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(isnan,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::IsnanKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(isfinite,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::IsfiniteKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   int,
-                   int64_t) {}
+
+
+

@@ -139,11 +139,4 @@ void MaxPoolGradKernel(const Context& dev_ctx,
 }  // namespace sparse
 }  // namespace phi
 
-PD_REGISTER_KERNEL(sparse_maxpool_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sparse::MaxPoolGradKernel,
-                   float,
-                   double) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
+

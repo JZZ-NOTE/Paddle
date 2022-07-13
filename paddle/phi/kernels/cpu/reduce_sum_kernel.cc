@@ -41,18 +41,4 @@ void SumRawKernel(const Context& dev_ctx,
 using complex64 = ::phi::dtype::complex<float>;
 using complex128 = ::phi::dtype::complex<double>;
 
-PD_REGISTER_KERNEL(sum_raw,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SumRawKernel,
-                   bool,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   int16_t,
-                   int,
-                   int64_t,
-                   complex64,
-                   complex128) {
-  kernel->OutputAt(0).SetDataType(paddle::experimental::DataType::UNDEFINED);
-}
+

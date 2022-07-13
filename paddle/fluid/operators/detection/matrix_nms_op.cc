@@ -398,11 +398,11 @@ https://arxiv.org/abs/2003.10152
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OPERATOR(
+REGISTER_OPERATOR__(
     matrix_nms, ops::MatrixNMSOp, ops::MatrixNMSOpMaker,
     paddle::framework::EmptyGradOpMaker<paddle::framework::OpDesc>,
     paddle::framework::EmptyGradOpMaker<paddle::imperative::OpBase>);
-REGISTER_OP_CPU_KERNEL(matrix_nms, ops::MatrixNMSKernel<float>,
+REGISTER_OP_CPU_KERNEL__(matrix_nms, ops::MatrixNMSKernel<float>,
                        ops::MatrixNMSKernel<double>);
 REGISTER_OP_VERSION(matrix_nms)
     .AddCheckpoint(

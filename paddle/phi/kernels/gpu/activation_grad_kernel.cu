@@ -283,48 +283,15 @@ void HardSwishGradKernel(const Context& dev_ctx,
 }  // namespace phi
 
 #ifdef PADDLE_WITH_HIP
-PD_REGISTER_KERNEL(relu_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ReluGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
-PD_REGISTER_KERNEL(relu_double_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ReluDoubleGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+
+
 #else
-PD_REGISTER_KERNEL(relu_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ReluGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
-PD_REGISTER_KERNEL(relu_double_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ReluDoubleGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+
+
 #endif
 
 #define PD_REGISTER_ACTIVATION_GRAD_KERNEL(name, func) \
-  PD_REGISTER_KERNEL(name,                             \
-                     GPU,                              \
-                     ALL_LAYOUT,                       \
-                     phi::func,                        \
-                     float,                            \
-                     double,                           \
-                     phi::dtype::float16,              \
-                     phi::dtype::bfloat16) {}
+  
 
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(sin_grad, SinGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(cos_grad, CosGradKernel)
@@ -353,15 +320,7 @@ PD_REGISTER_ACTIVATION_GRAD_KERNEL(softplus_grad, SoftplusGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(sqrt_grad, SqrtGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(rsqrt_grad, RsqrtGradKernel)
 
-PD_REGISTER_KERNEL(exp_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ExpGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {}
+
 
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(soft_shrink_grad, SoftShrinkGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(hard_shrink_grad, HardShrinkGradKernel)
@@ -370,32 +329,11 @@ PD_REGISTER_ACTIVATION_GRAD_KERNEL(silu_grad, SiluGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(elu_grad, EluGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(elu_double_grad, EluDoubleGradKernel)
 
-PD_REGISTER_KERNEL(expm1_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Expm1GradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
 
-PD_REGISTER_KERNEL(logit_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::LogitGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
 
-PD_REGISTER_KERNEL(square_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::SquareGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+
+
+
 
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(sigmoid_grad, SigmoidGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(sigmoid_double_grad, SigmoidDoubleGradKernel)
@@ -406,25 +344,11 @@ PD_REGISTER_ACTIVATION_GRAD_KERNEL(log_grad, LogGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(log2_grad, Log2GradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(log10_grad, Log10GradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(log1p_grad, Log1pGradKernel)
-PD_REGISTER_KERNEL(log_double_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::LogDoubleGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(hard_swish_grad, HardSwishGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(swish_grad, SwishGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(round_grad, RoundGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(floor_grad, FloorGradKernel)
 PD_REGISTER_ACTIVATION_GRAD_KERNEL(ceil_grad, CeilGradKernel)
 
-PD_REGISTER_KERNEL(pow_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::PowGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {}
+

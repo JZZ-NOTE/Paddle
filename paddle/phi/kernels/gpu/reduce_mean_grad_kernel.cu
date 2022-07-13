@@ -50,11 +50,4 @@ void ReduceMeanGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(mean_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ReduceMeanGradKernel,
-                   bool,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

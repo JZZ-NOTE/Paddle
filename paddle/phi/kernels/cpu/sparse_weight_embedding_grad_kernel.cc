@@ -207,18 +207,6 @@ void SparseWeightEmbeddingSparseGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(sparse_weight_embedding_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SparseWeightEmbeddingGradKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16) {}
 
-PD_REGISTER_KERNEL(sparse_weight_embedding_sparse_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SparseWeightEmbeddingSparseGradKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16) {}
+
+

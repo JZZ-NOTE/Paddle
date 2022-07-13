@@ -44,11 +44,4 @@ void TruncGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(trunc_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::TruncGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

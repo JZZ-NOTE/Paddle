@@ -119,10 +119,4 @@ void EmbeddingKernel(const Context &ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(embedding,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::EmbeddingKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

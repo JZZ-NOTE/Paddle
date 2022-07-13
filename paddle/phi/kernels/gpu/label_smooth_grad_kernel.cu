@@ -47,9 +47,4 @@ void LabelSmoothGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(label_smooth_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::LabelSmoothGradKernel,
-                   float,
-                   double) {}
+

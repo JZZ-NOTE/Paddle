@@ -19,5 +19,4 @@
 
 #include "paddle/phi/kernels/impl/logsumexp_kernel_impl.h"
 
-PD_REGISTER_KERNEL(
-    logsumexp, GPU, ALL_LAYOUT, phi::LogsumexpKernel, float, double) {}
+

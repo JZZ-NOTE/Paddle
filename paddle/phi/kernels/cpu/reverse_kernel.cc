@@ -18,13 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/reverse_kernel_impl.h"
 
-PD_REGISTER_KERNEL(reverse,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ReverseKernel,
-                   int,
-                   uint8_t,
-                   int64_t,
-                   bool,
-                   float,
-                   double) {}
+

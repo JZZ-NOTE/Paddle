@@ -102,7 +102,7 @@ using CPU = paddle::platform::CPUDeviceContext;
 DECLARE_INFER_SHAPE_FUNCTOR(norm, NormInferShapeFunctor,
                             PD_INFER_META(phi::NormInferMeta));
 
-REGISTER_OPERATOR(norm, ops::NormOp, ops::NormOpMaker,
+REGISTER_OPERATOR__(norm, ops::NormOp, ops::NormOpMaker,
                   ops::NormOpGradOpMaker<paddle::framework::OpDesc>,
                   ops::NormOpGradOpMaker<paddle::imperative::OpBase>,
                   NormInferShapeFunctor);

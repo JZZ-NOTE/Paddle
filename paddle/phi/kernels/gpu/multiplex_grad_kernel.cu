@@ -58,11 +58,4 @@ void MultiplexGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(multiplex_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::MultiplexGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

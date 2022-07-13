@@ -62,12 +62,4 @@ void DiagKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(diag,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DiagKernel,
-                   phi::dtype::float16,
-                   int,
-                   float,
-                   double,
-                   int64_t) {}
+

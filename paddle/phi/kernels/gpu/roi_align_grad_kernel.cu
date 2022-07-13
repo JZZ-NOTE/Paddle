@@ -256,5 +256,4 @@ void RoiAlignGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    roi_align_grad, GPU, ALL_LAYOUT, phi::RoiAlignGradKernel, float, double) {}
+

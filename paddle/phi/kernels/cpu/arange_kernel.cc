@@ -41,5 +41,4 @@ void ArangeKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    arange, CPU, ALL_LAYOUT, phi::ArangeKernel, float, double, int, int64_t) {}
+

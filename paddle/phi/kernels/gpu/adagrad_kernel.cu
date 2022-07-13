@@ -128,12 +128,6 @@ template struct SparseAdagradFunctor<phi::GPUContext, double>;
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    adagrad, GPU, ALL_LAYOUT, phi::AdagradDenseKernel, float, double) {}
 
-PD_REGISTER_KERNEL(adagrad_dense_param_sparse_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::AdagradSparseKernel,
-                   float,
-                   double) {}
+
+

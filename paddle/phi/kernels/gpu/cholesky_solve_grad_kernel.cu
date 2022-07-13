@@ -20,11 +20,6 @@
 #include "paddle/phi/backends/gpu/gpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(cholesky_solve_grad,  // cuda_only
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::CholeskySolveGradKernel,
-                   float,
-                   double) {}
+
 
 #endif  // not PADDLE_WITH_HIP

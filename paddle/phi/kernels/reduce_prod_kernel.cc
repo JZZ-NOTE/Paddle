@@ -31,10 +31,8 @@ void ProdKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    prod, CPU, ALL_LAYOUT, phi::ProdKernel, float, double, int, int64_t) {}
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(
-    prod, GPU, ALL_LAYOUT, phi::ProdKernel, float, double, int, int64_t) {}
+
 #endif

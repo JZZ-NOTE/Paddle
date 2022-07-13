@@ -104,11 +104,4 @@ void PNormGradKernel(const Context& dev_ctx,
   }
 }
 }  // namespace phi
-PD_REGISTER_KERNEL(p_norm_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::PNormGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+

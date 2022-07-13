@@ -18,21 +18,5 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/set_value_kernel_impl.h"
 
-PD_REGISTER_KERNEL(set_value,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SetValueKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool) {}
-PD_REGISTER_KERNEL(set_value_with_tensor,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SetTensorValueKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool) {}
+
+

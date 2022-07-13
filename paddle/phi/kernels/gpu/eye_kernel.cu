@@ -18,12 +18,4 @@
 #include "paddle/phi/backends/gpu/gpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(eye,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::EyeKernel,
-                   float,
-                   double,
-                   int64_t,
-                   int,
-                   phi::dtype::float16) {}
+

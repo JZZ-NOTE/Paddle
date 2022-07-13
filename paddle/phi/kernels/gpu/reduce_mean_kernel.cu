@@ -35,13 +35,4 @@ void MeanRawKernel(const Context& dev_ctx,
 
 using float16 = phi::dtype::float16;
 
-PD_REGISTER_KERNEL(mean_raw,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::MeanRawKernel,
-                   float,
-                   double,
-                   bool,
-                   float16,
-                   int,
-                   int64_t) {}
+

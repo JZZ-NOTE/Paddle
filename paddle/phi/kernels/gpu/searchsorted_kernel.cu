@@ -18,11 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/searchsorted_kernel_impl.h"
 
-PD_REGISTER_KERNEL(searchsorted,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::SearchsortedKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

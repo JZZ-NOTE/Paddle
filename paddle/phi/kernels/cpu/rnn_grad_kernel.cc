@@ -1372,5 +1372,4 @@ void RnnGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    rnn_grad, CPU, ALL_LAYOUT, phi::RnnGradKernel, float, double) {}
+

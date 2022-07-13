@@ -21,5 +21,4 @@ limitations under the License. */
 
 using float16 = phi::dtype::float16;
 
-PD_REGISTER_KERNEL(
-    multi_dot, GPU, ALL_LAYOUT, phi::MultiDotKernel, float, double, float16) {}
+

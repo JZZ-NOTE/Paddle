@@ -77,5 +77,4 @@ void CholeskyKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    cholesky, CPU, ALL_LAYOUT, phi::CholeskyKernel, float, double) {}
+

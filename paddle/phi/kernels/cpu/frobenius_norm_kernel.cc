@@ -17,5 +17,4 @@
 
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(
-    frobenius_norm, CPU, ALL_LAYOUT, phi::FrobeniusNormKernel, float, double) {}
+

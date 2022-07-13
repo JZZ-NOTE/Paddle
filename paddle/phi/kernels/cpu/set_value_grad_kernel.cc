@@ -18,12 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/set_value_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(set_value_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SetValueGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   bool) {}
+

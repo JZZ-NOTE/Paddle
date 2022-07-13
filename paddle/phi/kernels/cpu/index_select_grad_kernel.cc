@@ -53,11 +53,4 @@ void IndexSelectGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(index_select_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::IndexSelectGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

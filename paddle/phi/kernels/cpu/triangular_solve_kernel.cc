@@ -77,9 +77,4 @@ void TriangularSolveKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(triangular_solve,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TriangularSolveKernel,
-                   float,
-                   double) {}
+

@@ -44,12 +44,4 @@ void ScatterNdAddGradKernel(const Context &ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(scatter_nd_add_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ScatterNdAddGradKernel,
-                   float,
-                   double,
-                   int64_t,
-                   int,
-                   phi::dtype::float16) {}
+

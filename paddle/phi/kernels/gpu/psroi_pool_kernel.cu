@@ -224,8 +224,4 @@ void PsroiPoolKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    psroi_pool, GPU, ALL_LAYOUT, phi::PsroiPoolKernel, float, double) {
-  kernel->InputAt(2).SetDataType(
-      paddle::experimental::CppTypeToDataType<int>::Type());
-}
+

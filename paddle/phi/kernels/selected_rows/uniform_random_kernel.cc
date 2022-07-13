@@ -60,35 +60,13 @@ void UniformRandomKernel(const Context& dev_ctx,
 }  // namespace sr
 }  // namespace phi
 
-PD_REGISTER_KERNEL(uniform_random_raw_sr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sr::UniformRandomRawKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16) {}
 
-PD_REGISTER_KERNEL(uniform_random_sr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sr::UniformRandomKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16) {}
+
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
 
-PD_REGISTER_KERNEL(uniform_random_raw_sr,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sr::UniformRandomRawKernel,
-                   float,
-                   double) {}
 
-PD_REGISTER_KERNEL(uniform_random_sr,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sr::UniformRandomKernel,
-                   float,
-                   double) {}
+
+
 #endif

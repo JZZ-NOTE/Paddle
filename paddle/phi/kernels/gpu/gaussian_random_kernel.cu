@@ -107,11 +107,4 @@ void GaussianRandomKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(gaussian_random,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::GaussianRandomKernel,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16,
-                   float,
-                   double) {}
+

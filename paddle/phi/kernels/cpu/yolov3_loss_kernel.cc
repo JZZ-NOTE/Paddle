@@ -370,5 +370,4 @@ void Yolov3LossKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    yolov3_loss, CPU, ALL_LAYOUT, phi::Yolov3LossKernel, float, double) {}
+

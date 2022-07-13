@@ -17,9 +17,4 @@
 
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(bilinear_tensor_product,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::BilinearTensorProductKernel,
-                   float,
-                   double) {}
+

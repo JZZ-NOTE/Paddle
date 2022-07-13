@@ -93,4 +93,4 @@ void QrKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(qr, CPU, ALL_LAYOUT, phi::QrKernel, float, double) {}
+

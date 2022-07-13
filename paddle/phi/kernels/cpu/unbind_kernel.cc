@@ -17,13 +17,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/unbind_kernel_impl.h"
 
-PD_REGISTER_KERNEL(unbind,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::UnbindKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16,
-                   int,
-                   int64_t) {}
+

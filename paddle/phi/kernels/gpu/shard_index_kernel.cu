@@ -95,5 +95,4 @@ void ShardIndexKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    shard_index, GPU, ALL_LAYOUT, phi::ShardIndexKernel, int, int64_t) {}
+

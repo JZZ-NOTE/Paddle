@@ -1187,39 +1187,8 @@ void BicubicInterpKernel(
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(bilinear_interp_v2,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::BilinearInterpKernel,
-                   float,
-                   double,
-                   uint8_t) {}
-PD_REGISTER_KERNEL(nearest_interp_v2,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::NearestInterpKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   uint8_t) {}
-PD_REGISTER_KERNEL(trilinear_interp_v2,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TrilinearInterpKernel,
-                   float,
-                   double,
-                   uint8_t) {}
-PD_REGISTER_KERNEL(linear_interp_v2,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::LinearInterpKernel,
-                   float,
-                   double,
-                   uint8_t) {}
-PD_REGISTER_KERNEL(bicubic_interp_v2,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::BicubicInterpKernel,
-                   float,
-                   double) {}
+
+
+
+
+

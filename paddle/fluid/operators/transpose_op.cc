@@ -358,7 +358,7 @@ REGISTER_OPERATOR(
 REGISTER_OPERATOR(transpose_grad, ops::TransposeOpGrad,
                   ops::TransposeGradInferVarType);
 
-REGISTER_OPERATOR(transpose2, ops::Transpose2Op, ops::Transpose2OpMaker,
+REGISTER_OPERATOR__(transpose2, ops::Transpose2Op, ops::Transpose2OpMaker,
                   ops::Transpose2GradMaker<paddle::framework::OpDesc>,
                   ops::Transpose2GradMaker<paddle::imperative::OpBase>);
 REGISTER_OPERATOR(transpose2_grad, ops::Transpose2OpGrad,

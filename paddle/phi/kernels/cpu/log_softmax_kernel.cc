@@ -119,5 +119,4 @@ void LogSoftmaxKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    log_softmax, CPU, ALL_LAYOUT, phi::LogSoftmaxKernel, float, double) {}
+

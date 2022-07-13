@@ -60,5 +60,4 @@ void BCELossKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    bce_loss, GPU, ALL_LAYOUT, phi::BCELossKernel, float, double) {}
+

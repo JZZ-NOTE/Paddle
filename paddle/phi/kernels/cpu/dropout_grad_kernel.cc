@@ -58,10 +58,4 @@ void DropoutGradRawKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(dropout_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DropoutGradRawKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16) {}
+

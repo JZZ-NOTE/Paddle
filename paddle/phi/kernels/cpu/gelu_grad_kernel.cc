@@ -142,5 +142,4 @@ void GeluGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    gelu_grad, CPU, ALL_LAYOUT, phi::GeluGradKernel, float, double) {}
+

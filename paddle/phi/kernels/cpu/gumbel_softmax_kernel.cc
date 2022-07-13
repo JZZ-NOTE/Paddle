@@ -117,5 +117,4 @@ struct OneHotGenerator<CPUContext, T> {
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    gumbel_softmax, CPU, ALL_LAYOUT, phi::GumbelSoftmaxKernel, float, double) {}
+

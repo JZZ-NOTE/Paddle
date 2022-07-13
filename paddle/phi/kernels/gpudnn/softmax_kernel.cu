@@ -32,30 +32,11 @@ void SoftmaxGPUDNNKernel(const Context& dev_ctx,
 }  // namespace phi
 
 #ifdef PADDLE_WITH_HIP
-PD_REGISTER_KERNEL(softmax,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::SoftmaxGPUDNNKernel,
-                   float,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+
 #else
 #if CUDNN_VERSION_MIN(8, 1, 0)
-PD_REGISTER_KERNEL(softmax,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::SoftmaxGPUDNNKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+
 #else
-PD_REGISTER_KERNEL(softmax,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::SoftmaxGPUDNNKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+
 #endif
 #endif

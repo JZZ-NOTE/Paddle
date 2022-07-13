@@ -437,8 +437,7 @@ void RnnGradKernel(const Context &dev_ctx,
 
 #ifdef PADDLE_WITH_HIP
 // MIOPEN do not support double
-PD_REGISTER_KERNEL(rnn_grad, GPU, ALL_LAYOUT, phi::RnnGradKernel, float) {}
+
 #else
-PD_REGISTER_KERNEL(
-    rnn_grad, GPU, ALL_LAYOUT, phi::RnnGradKernel, float, double) {}
+
 #endif

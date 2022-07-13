@@ -77,11 +77,4 @@ void HistogramKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(histogram,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::HistogramKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

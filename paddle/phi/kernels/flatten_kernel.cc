@@ -48,78 +48,18 @@ void FlattenWithXShape(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(flatten,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::FlattenKernel,
-                   float,
-                   double,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(flatten_with_xshape,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::FlattenWithXShape,
-                   float,
-                   double,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
+
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(flatten,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::FlattenKernel,
-                   float,
-                   phi::dtype::float16,
-                   double,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(flatten_with_xshape,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::FlattenWithXShape,
-                   float,
-                   phi::dtype::float16,
-                   double,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
+
+
 #endif
 
 #ifdef PADDLE_WITH_XPU
-PD_REGISTER_KERNEL(flatten,
-                   XPU,
-                   ALL_LAYOUT,
-                   phi::FlattenKernel,
-                   float,
-                   phi::dtype::float16,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(flatten_with_xshape,
-                   XPU,
-                   ALL_LAYOUT,
-                   phi::FlattenWithXShape,
-                   float,
-                   phi::dtype::float16,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
+
+
 #endif

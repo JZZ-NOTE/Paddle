@@ -19,8 +19,7 @@ limitations under the License. */
 #include "paddle/phi/core/kernel_registry.h"
 
 #ifdef PADDLE_WITH_HIP
-PD_REGISTER_KERNEL(dist_grad, GPU, ALL_LAYOUT, phi::DistGradKernel, float) {}
+
 #else
-PD_REGISTER_KERNEL(
-    dist_grad, GPU, ALL_LAYOUT, phi::DistGradKernel, float, double) {}
+
 #endif

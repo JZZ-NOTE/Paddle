@@ -18,9 +18,4 @@ limitations under the License. */
 #include "paddle/phi/backends/cpu/cpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(matrix_power_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MatrixPowerGradKernel,
-                   float,
-                   double) {}
+

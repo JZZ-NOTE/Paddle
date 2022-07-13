@@ -98,18 +98,6 @@ void UniformRandomKernel(const Context &dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(uniform_random_raw,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::UniformRandomRawKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16) {}
 
-PD_REGISTER_KERNEL(uniform_random,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::UniformRandomKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16) {}
+
+

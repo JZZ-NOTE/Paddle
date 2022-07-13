@@ -36,13 +36,6 @@ void EighKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(eigh,  // cuda_only
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::EighKernel,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
 
 #endif  // not PADDLE_WITH_HIP

@@ -47,14 +47,4 @@ void GatherNdKernel(const Context &ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(gather_nd,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::GatherNdKernel,
-                   float,
-                   double,
-                   int64_t,
-                   int,
-                   int16_t,
-                   bool,
-                   uint8_t) {}
+

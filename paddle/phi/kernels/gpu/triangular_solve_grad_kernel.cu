@@ -15,9 +15,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/triangular_solve_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(triangular_solve_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::TriangularSolveGradKernel,
-                   float,
-                   double) {}
+

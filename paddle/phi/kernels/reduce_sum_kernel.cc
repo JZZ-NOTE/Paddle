@@ -35,37 +35,8 @@ void SumKernel(const Context& dev_ctx,
 using complex64 = ::phi::dtype::complex<float>;
 using complex128 = ::phi::dtype::complex<double>;
 
-PD_REGISTER_KERNEL(sum,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::SumKernel,
-                   bool,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   int16_t,
-                   int,
-                   int64_t,
-                   complex64,
-                   complex128) {
-  kernel->OutputAt(0).SetDataType(paddle::experimental::DataType::UNDEFINED);
-}
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(sum,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::SumKernel,
-                   bool,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16,
-                   int16_t,
-                   int,
-                   int64_t,
-                   complex64,
-                   complex128) {
-  kernel->OutputAt(0).SetDataType(paddle::experimental::DataType::UNDEFINED);
-}
+
 #endif

@@ -57,11 +57,4 @@ void WhereGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(where_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::WhereGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

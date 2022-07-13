@@ -17,11 +17,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/clip_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(clip_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ClipGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

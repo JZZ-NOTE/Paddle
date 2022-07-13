@@ -76,12 +76,4 @@ void PutAlongAxisKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(put_along_axis,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::PutAlongAxisKernel,
-                   float,
-                   double,
-                   int,
-                   uint8_t,
-                   int64_t) {}
+

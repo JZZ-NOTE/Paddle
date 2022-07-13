@@ -402,7 +402,7 @@ REGISTER_OPERATOR(flatten_grad, ops::FlattenGradOp,
                   ops::FlattenGradInplaceInferer,
                   ops::FlattenGradNoNeedBufferVarsInferer);
 
-REGISTER_OPERATOR(flatten2, ops::Flatten2Op, ops::Flatten2OpMaker,
+REGISTER_OPERATOR__(flatten2, ops::Flatten2Op, ops::Flatten2OpMaker,
                   ops::Flatten2GradOpMaker<paddle::framework::OpDesc>,
                   ops::Flatten2GradOpMaker<paddle::imperative::OpBase>,
                   ops::FlattenOpInplaceInferer);

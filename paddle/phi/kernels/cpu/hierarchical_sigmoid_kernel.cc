@@ -106,9 +106,4 @@ void HierarchicalSigmoidKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(hierarchical_sigmoid,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::HierarchicalSigmoidKernel,
-                   float,
-                   double) {}
+

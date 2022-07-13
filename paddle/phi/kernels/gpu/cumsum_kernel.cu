@@ -325,12 +325,4 @@ void CumsumKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(cumsum,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::CumsumKernel,
-                   float,
-                   double,
-                   int16_t,
-                   int,
-                   int64_t) {}
+

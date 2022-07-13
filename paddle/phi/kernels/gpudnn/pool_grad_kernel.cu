@@ -405,44 +405,11 @@ using phi::dtype::float16;
 
 #ifdef PADDLE_WITH_HIP
 // MIOPEN do not support double
-PD_REGISTER_KERNEL(pool2d_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Pool2dGradGPUDNNKernel,
-                   float,
-                   float16) {}
-PD_REGISTER_KERNEL(pool2d_double_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Pool2dDoubleGradGPUDNNKernel,
-                   float,
-                   float16) {}
-PD_REGISTER_KERNEL(pool3d_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Pool3dGradGPUDNNKernel,
-                   float,
-                   float16) {}
+
+
+
 #else
-PD_REGISTER_KERNEL(pool2d_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Pool2dGradGPUDNNKernel,
-                   float,
-                   double,
-                   float16) {}
-PD_REGISTER_KERNEL(pool2d_double_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Pool2dDoubleGradGPUDNNKernel,
-                   float,
-                   double,
-                   float16) {}
-PD_REGISTER_KERNEL(pool3d_grad,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Pool3dGradGPUDNNKernel,
-                   float,
-                   double,
-                   float16) {}
+
+
+
 #endif

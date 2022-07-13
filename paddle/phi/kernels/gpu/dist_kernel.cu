@@ -21,7 +21,7 @@
 #ifdef PADDLE_WITH_HIP
 // Eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorReductionGpu.h:922
 // do not support double in HIPCC platform (Eigen3 to be fixed)
-PD_REGISTER_KERNEL(dist, GPU, ALL_LAYOUT, phi::DistKernel, float) {}
+
 #else
-PD_REGISTER_KERNEL(dist, GPU, ALL_LAYOUT, phi::DistKernel, float, double) {}
+
 #endif

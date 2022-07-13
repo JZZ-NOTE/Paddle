@@ -128,5 +128,4 @@ void BernoulliKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    bernoulli, GPU, ALL_LAYOUT, phi::BernoulliKernel, float, double) {}
+

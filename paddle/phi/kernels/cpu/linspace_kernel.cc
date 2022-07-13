@@ -61,11 +61,4 @@ void LinspaceKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(linspace,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::LinspaceKernel,
-                   float,
-                   int32_t,
-                   int64_t,
-                   double) {}
+

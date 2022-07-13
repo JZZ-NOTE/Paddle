@@ -181,6 +181,4 @@ void LayerNormGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    layer_norm_grad, CPU, ALL_LAYOUT, phi::LayerNormGradKernel, float, double) {
-}
+

@@ -17,9 +17,4 @@
 
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(gumbel_softmax_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::GumbelSoftmaxGradKernel,
-                   float,
-                   double) {}
+

@@ -19,42 +19,9 @@
 #include "paddle/phi/common/float16.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(pool2d_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Pool2dGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
-PD_REGISTER_KERNEL(pool2d_double_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Pool2dDoubleGradKernel,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(max_pool2d_with_index_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::MaxPool2dWithIndexGradKernel,
-                   float,
-                   double) {
-  kernel->InputAt(1).SetDataType(
-      paddle::experimental::CppTypeToDataType<int>::Type());
-}
 
-PD_REGISTER_KERNEL(pool3d_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Pool3dGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
-PD_REGISTER_KERNEL(max_pool3d_with_index_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::MaxPool3dWithIndexGradKernel,
-                   float,
-                   double) {
-  kernel->InputAt(1).SetDataType(
-      paddle::experimental::CppTypeToDataType<int>::Type());
-}
+
+
+
+
+

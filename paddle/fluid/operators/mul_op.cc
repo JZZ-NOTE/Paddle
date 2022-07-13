@@ -269,7 +269,7 @@ class MulDoubleGradMaker : public framework::SingleGradOpMaker<T> {
 namespace ops = paddle::operators;
 DECLARE_INFER_SHAPE_FUNCTOR(mul, MulInferShapeFunctor,
                             PD_INFER_META(phi::MatmulWithFlattenInferMeta));
-REGISTER_OPERATOR(mul, ops::MulOp, ops::MulOpMaker, ops::MulOpInferVarType,
+REGISTER_OPERATOR__(mul, ops::MulOp, ops::MulOpMaker, ops::MulOpInferVarType,
                   ops::MulOpGradMaker<paddle::framework::OpDesc>,
                   ops::MulOpGradMaker<paddle::imperative::OpBase>,
                   MulInferShapeFunctor);

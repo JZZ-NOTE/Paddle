@@ -43,14 +43,4 @@ void TraceKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(trace,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::TraceKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

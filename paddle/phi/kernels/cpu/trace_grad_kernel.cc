@@ -18,14 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/trace_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(trace_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TraceGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

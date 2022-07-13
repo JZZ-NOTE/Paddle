@@ -32,7 +32,7 @@ REGISTER_OP_CUDA_KERNEL(
     ops::FlattenGradKernel<paddle::platform::CUDADeviceContext, int>,
     ops::FlattenGradKernel<paddle::platform::CUDADeviceContext, int8_t>,
     ops::FlattenGradKernel<paddle::platform::CUDADeviceContext, int64_t>);
-REGISTER_OP_CUDA_KERNEL(
+REGISTER_OP_CUDA_KERNEL__(
     flatten2, ops::Flatten2Kernel<paddle::platform::CUDADeviceContext, float>,
     ops::Flatten2Kernel<paddle::platform::CUDADeviceContext, double>,
     ops::Flatten2Kernel<paddle::platform::CUDADeviceContext, uint8_t>,

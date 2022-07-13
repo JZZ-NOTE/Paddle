@@ -308,13 +308,4 @@ void CumprodGradKernel(const Context &dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(cumprod_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::CumprodGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

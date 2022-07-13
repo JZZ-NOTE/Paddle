@@ -17,5 +17,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/lerp_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(
-    lerp_grad, CPU, ALL_LAYOUT, phi::LerpGradKernel, float, double) {}
+

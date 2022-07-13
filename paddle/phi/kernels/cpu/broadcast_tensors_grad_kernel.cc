@@ -190,12 +190,4 @@ void BroadcastTensorsGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(broadcast_tensors_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::BroadcastTensorsGradKernel,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

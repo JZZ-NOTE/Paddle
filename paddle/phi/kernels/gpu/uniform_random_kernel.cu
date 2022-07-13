@@ -152,12 +152,6 @@ void UniformRandomKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(uniform_random_raw,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::UniformRandomRawKernel,
-                   float,
-                   double) {}
 
-PD_REGISTER_KERNEL(
-    uniform_random, GPU, ALL_LAYOUT, phi::UniformRandomKernel, float, double) {}
+
+

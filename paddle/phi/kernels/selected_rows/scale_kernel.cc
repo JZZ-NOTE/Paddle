@@ -41,30 +41,8 @@ void ScaleKernel(const Context& dev_ctx,
 }  // namespace sr
 }  // namespace phi
 
-PD_REGISTER_KERNEL(scale_sr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sr::ScaleKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(scale_sr,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sr::ScaleKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   uint8_t,
-                   int8_t,
-                   int16_t,
-                   int,
-                   int64_t) {}
+
 #endif

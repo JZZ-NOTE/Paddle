@@ -53,12 +53,4 @@ void GatherNdGradKernel(const Context &ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(gather_nd_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::GatherNdGradKernel,
-                   float,
-                   double,
-                   int64_t,
-                   int,
-                   uint8_t) {}
+

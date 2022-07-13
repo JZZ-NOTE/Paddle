@@ -52,11 +52,4 @@ void IndexSelectKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(index_select,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::IndexSelectKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

@@ -43,27 +43,7 @@ void StridedSliceGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(strided_slice_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::StridedSliceGradKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(strided_slice_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::StridedSliceGradKernel,
-                   bool,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
 #endif

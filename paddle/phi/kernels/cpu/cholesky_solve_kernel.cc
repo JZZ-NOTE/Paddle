@@ -38,5 +38,4 @@ class CholeskySolveFunctor<T, CPUContext> {
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    cholesky_solve, CPU, ALL_LAYOUT, phi::CholeskySolveKernel, float, double) {}
+

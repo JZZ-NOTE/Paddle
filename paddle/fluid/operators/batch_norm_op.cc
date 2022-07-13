@@ -533,7 +533,7 @@ namespace ops = paddle::operators;
 DECLARE_INFER_SHAPE_FUNCTOR(batch_norm, BatchNormInferShapeFunctor,
                             PD_INFER_META(phi::BatchNormInferMeta));
 
-REGISTER_OPERATOR(batch_norm, ops::BatchNormOp, ops::BatchNormOpMaker,
+REGISTER_OPERATOR__(batch_norm, ops::BatchNormOp, ops::BatchNormOpMaker,
                   ops::BatchNormOpInferVarType,
                   ops::BatchNormGradMaker<paddle::framework::OpDesc>,
                   ops::BatchNormGradMaker<paddle::imperative::OpBase>);

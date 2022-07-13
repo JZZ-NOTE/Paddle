@@ -63,12 +63,4 @@ void ScatterGradKernel(const Context &ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(scatter_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ScatterGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {}
+

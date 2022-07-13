@@ -151,33 +151,13 @@ void HardSwishKernel(const Context& dev_ctx,
 }  // namespace phi
 
 #ifdef PADDLE_WITH_HIP
-PD_REGISTER_KERNEL(relu,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ReluKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+
 #else
-PD_REGISTER_KERNEL(relu,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ReluKernel,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+
 #endif
 
 #define PD_REGISTER_ACTIVATION_KERNEL(name, func) \
-  PD_REGISTER_KERNEL(name,                        \
-                     GPU,                         \
-                     ALL_LAYOUT,                  \
-                     phi::func,                   \
-                     float,                       \
-                     double,                      \
-                     phi::dtype::float16,         \
-                     phi::dtype::bfloat16) {}
+  
 
 PD_REGISTER_ACTIVATION_KERNEL(sin, SinKernel)
 PD_REGISTER_ACTIVATION_KERNEL(cos, CosKernel)
@@ -201,39 +181,10 @@ PD_REGISTER_ACTIVATION_KERNEL(sqrt, SqrtKernel)
 PD_REGISTER_ACTIVATION_KERNEL(rsqrt, RsqrtKernel)
 PD_REGISTER_ACTIVATION_KERNEL(softplus, SoftplusKernel)
 
-PD_REGISTER_KERNEL(exp,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ExpKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {}
-PD_REGISTER_KERNEL(expm1,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Expm1Kernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
-PD_REGISTER_KERNEL(logit,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::LogitKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
-PD_REGISTER_KERNEL(square,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::SquareKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16) {}
+
+
+
+
 PD_REGISTER_ACTIVATION_KERNEL(hard_shrink, HardShrinkKernel)
 PD_REGISTER_ACTIVATION_KERNEL(soft_shrink, SoftShrinkKernel)
 PD_REGISTER_ACTIVATION_KERNEL(tanh_shrink, TanhShrinkKernel)
@@ -251,12 +202,4 @@ PD_REGISTER_ACTIVATION_KERNEL(swish, SwishKernel)
 PD_REGISTER_ACTIVATION_KERNEL(round, RoundKernel)
 PD_REGISTER_ACTIVATION_KERNEL(floor, FloorKernel)
 PD_REGISTER_ACTIVATION_KERNEL(ceil, CeilKernel)
-PD_REGISTER_KERNEL(pow,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::PowKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::float16) {}
+

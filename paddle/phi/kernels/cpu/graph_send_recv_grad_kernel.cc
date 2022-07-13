@@ -154,11 +154,4 @@ void GraphSendRecvGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(graph_send_recv_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::GraphSendRecvGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

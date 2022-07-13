@@ -48,12 +48,4 @@ void StackGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(stack_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::StackGradKernel,
-                   float,
-                   double,
-                   int64_t,
-                   int,
-                   phi::dtype::bfloat16) {}
+

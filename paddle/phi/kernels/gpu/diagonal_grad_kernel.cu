@@ -158,11 +158,4 @@ void DiagonalGradKernel(const Context& dev_ctx,
   }
 }
 }  // namespace phi
-PD_REGISTER_KERNEL(diagonal_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::DiagonalGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

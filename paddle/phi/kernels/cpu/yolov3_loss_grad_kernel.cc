@@ -237,9 +237,4 @@ void Yolov3LossGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(yolov3_loss_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::Yolov3LossGradKernel,
-                   float,
-                   double) {}
+

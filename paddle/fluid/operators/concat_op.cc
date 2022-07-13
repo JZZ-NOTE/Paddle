@@ -208,7 +208,7 @@ namespace ops = paddle::operators;
 DECLARE_INFER_SHAPE_FUNCTOR(concat, ConcatInferShapeFunctor,
                             PD_INFER_META(phi::ConcatInferMeta));
 
-REGISTER_OPERATOR(concat, ops::ConcatOp, ops::ConcatOpMaker,
+REGISTER_OPERATOR__(concat, ops::ConcatOp, ops::ConcatOpMaker,
                   ops::ConcatGradOpMaker<paddle::framework::OpDesc>,
                   ops::ConcatGradOpMaker<paddle::imperative::OpBase>,
                   ConcatInferShapeFunctor);

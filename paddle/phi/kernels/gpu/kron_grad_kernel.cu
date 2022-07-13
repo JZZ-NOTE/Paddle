@@ -18,14 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/kron_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(kron_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::KronGradKernel,
-                   int,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::float16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

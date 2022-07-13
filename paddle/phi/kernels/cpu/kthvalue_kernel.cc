@@ -157,11 +157,4 @@ void KthvalueKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(kthvalue,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::KthvalueKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

@@ -424,11 +424,6 @@ void MatrixRankTolKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(matrix_rank_tol,  // cuda_only
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::MatrixRankTolKernel,
-                   float,
-                   double) {}
+
 
 #endif  // not PADDLE_WITH_HIP

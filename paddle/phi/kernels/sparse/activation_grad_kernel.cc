@@ -48,23 +48,8 @@ void SparseReluGradKernel(const Context& dev_ctx,
 }  // namespace sparse
 }  // namespace phi
 
-PD_REGISTER_KERNEL(sparse_relu_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseReluGradKernel,
-                   float,
-                   double) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(sparse_relu_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sparse::SparseReluGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
+
 #endif

@@ -63,9 +63,4 @@ void HierarchicalSigmoidGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(hierarchical_sigmoid_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::HierarchicalSigmoidGradKernel,
-                   float,
-                   double) {}
+

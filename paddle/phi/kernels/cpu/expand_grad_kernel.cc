@@ -19,11 +19,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/expand_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(expand_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ExpandGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

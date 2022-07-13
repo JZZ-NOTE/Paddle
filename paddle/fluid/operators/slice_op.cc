@@ -433,7 +433,7 @@ DECLARE_NO_NEED_BUFFER_VARS_INFERER(SliceOpGradNoNeedBufferVarsInferer,
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OPERATOR(slice, ops::SliceOp, ops::SliceOpMaker,
+REGISTER_OPERATOR__(slice, ops::SliceOp, ops::SliceOpMaker,
                   ops::SliceOpGradMaker<paddle::framework::OpDesc>,
                   ops::SliceOpGradMaker<paddle::imperative::OpBase>,
                   ops::SliceOpVarTypeInference);
@@ -469,7 +469,7 @@ REGISTER_OP_CPU_KERNEL(
     ops::SliceGradKernel<paddle::platform::CPUDeviceContext,
                          paddle::platform::bfloat16>);
 
-REGISTER_OP_CUDA_KERNEL(
+REGISTER_OP_CUDA_KERNEL__(
     slice, ops::SliceKernel<paddle::platform::CUDADeviceContext, bool>,
     ops::SliceKernel<paddle::platform::CUDADeviceContext, float>,
     ops::SliceKernel<paddle::platform::CUDADeviceContext, double>,

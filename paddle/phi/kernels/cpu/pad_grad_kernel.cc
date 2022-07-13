@@ -18,11 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/pad_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(pad_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::PadGradKernel,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

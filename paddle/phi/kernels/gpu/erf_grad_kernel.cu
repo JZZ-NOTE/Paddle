@@ -18,10 +18,4 @@ limitations under the License. */
 #include "paddle/phi/kernels/erf_grad_kernel.h"
 #include "paddle/phi/kernels/impl/erf_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(erf_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ErfGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

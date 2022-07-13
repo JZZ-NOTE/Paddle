@@ -1548,18 +1548,7 @@ void CrossEntropyWithSoftmaxKernel(const Context& dev_ctx,
 }  // namespace phi
 
 #ifdef PADDLE_WITH_HIP
-PD_REGISTER_KERNEL(cross_entropy_with_softmax,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::CrossEntropyWithSoftmaxKernel,
-                   float,
-                   phi::dtype::float16) {}
+
 #else
-PD_REGISTER_KERNEL(cross_entropy_with_softmax,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::CrossEntropyWithSoftmaxKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+
 #endif

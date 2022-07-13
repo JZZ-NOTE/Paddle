@@ -62,10 +62,4 @@ void PReluKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(prelu,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::PReluKernel,
-                   float,
-                   phi::dtype::float16,
-                   double) {}
+

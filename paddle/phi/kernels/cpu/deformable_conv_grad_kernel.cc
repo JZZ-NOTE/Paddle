@@ -325,9 +325,4 @@ void FilterGradAddup(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(deformable_conv_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DeformableConvGradKernel,
-                   float,
-                   double) {}
+

@@ -180,5 +180,4 @@ void GridSampleKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    grid_sample, CPU, ALL_LAYOUT, phi::GridSampleKernel, float, double) {}
+

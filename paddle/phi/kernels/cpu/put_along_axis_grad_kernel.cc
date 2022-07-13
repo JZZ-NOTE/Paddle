@@ -72,12 +72,4 @@ void PutAlongAxisGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(put_along_axis_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::PutAlongAxisGradKernel,
-                   float,
-                   double,
-                   int,
-                   uint8_t,
-                   int64_t) {}
+

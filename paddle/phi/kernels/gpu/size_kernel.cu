@@ -18,13 +18,4 @@
 #include "paddle/phi/backends/gpu/gpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 
-PD_REGISTER_KERNEL(size,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::SizeKernel,
-                   int,
-                   int64_t,
-                   phi::dtype::float16,
-                   float,
-                   double,
-                   bool) {}
+

@@ -269,12 +269,4 @@ void Conv3dGradKernel(const Context& dev_ctx,
 }  // namespace sparse
 }  // namespace phi
 
-PD_REGISTER_KERNEL(sparse_conv3d_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sparse::Conv3dGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
+

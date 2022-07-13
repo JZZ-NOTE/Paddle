@@ -18,9 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/deformable_conv_kernel_impl.h"
 
-PD_REGISTER_KERNEL(deformable_conv,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::DeformableConvKernel,
-                   float,
-                   double) {}
+

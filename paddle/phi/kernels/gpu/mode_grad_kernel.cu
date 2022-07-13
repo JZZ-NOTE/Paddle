@@ -75,11 +75,4 @@ void ModeGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(mode_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ModeGradKernel,
-                   float,
-                   double,
-                   int32_t,
-                   int64_t) {}
+

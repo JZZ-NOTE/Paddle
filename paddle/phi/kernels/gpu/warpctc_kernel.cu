@@ -18,5 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/warpctc_kernel_impl.h"
 
-PD_REGISTER_KERNEL(
-    warpctc, GPU, ALL_LAYOUT, phi::WarpctcKernel, float, double) {}
+

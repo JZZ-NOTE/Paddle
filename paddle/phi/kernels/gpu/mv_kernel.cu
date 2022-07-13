@@ -19,4 +19,4 @@
 
 #include "paddle/phi/kernels/impl/mv_kernel_impl.h"
 
-PD_REGISTER_KERNEL(mv, GPU, ALL_LAYOUT, phi::MvKernel, float, double) {}
+

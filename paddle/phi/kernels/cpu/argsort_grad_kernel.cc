@@ -123,11 +123,4 @@ void ArgsortGradKernel(const Context& dev_ctx,
 }
 
 }  // namespace phi
-PD_REGISTER_KERNEL(argsort_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ArgsortGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

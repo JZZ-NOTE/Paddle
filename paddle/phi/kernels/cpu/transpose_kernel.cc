@@ -66,15 +66,4 @@ void TransposeKernel(const Context& ctx,
 }
 }  // namespace phi
 
-PD_REGISTER_KERNEL(transpose,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::TransposeKernel,
-                   bool,
-                   float,
-                   double,
-                   int32_t,
-                   int64_t,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

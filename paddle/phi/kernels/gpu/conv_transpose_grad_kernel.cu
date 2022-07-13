@@ -131,27 +131,7 @@ void DepthwiseConv2dTransposeGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(conv2d_transpose_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Conv2dTransposeGradKernel,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(conv2d_transpose_grad_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Conv2dTransposeDoubleGradKernel,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(conv3d_transpose_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Conv3dTransposeGradKernel,
-                   float,
-                   double) {}
-PD_REGISTER_KERNEL(depthwise_conv2d_transpose_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::DepthwiseConv2dTransposeGradKernel,
-                   float,
-                   double) {}
+
+
+
+

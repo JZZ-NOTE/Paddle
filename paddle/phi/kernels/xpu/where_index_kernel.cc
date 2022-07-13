@@ -68,5 +68,4 @@ void WhereIndexKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    where_index, XPU, ALL_LAYOUT, phi::WhereIndexKernel, int, bool, float) {}
+

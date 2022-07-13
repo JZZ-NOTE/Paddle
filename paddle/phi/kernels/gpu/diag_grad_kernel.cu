@@ -128,12 +128,4 @@ void DiagGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(diag_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::DiagGradKernel,
-                   phi::dtype::float16,
-                   int,
-                   int64_t,
-                   float,
-                   double) {}
+

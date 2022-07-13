@@ -45,24 +45,14 @@ void SqrtKernel(const Context& dev_ctx,
 }  // namespace sr
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    square_sr, CPU, ALL_LAYOUT, phi::sr::SquareKernel, float, double) {}
 
-PD_REGISTER_KERNEL(
-    sqrt_sr, CPU, ALL_LAYOUT, phi::sr::SqrtKernel, float, double) {}
+
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
 
-PD_REGISTER_KERNEL(square_sr,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sr::SquareKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(
-    sqrt_sr, GPU, ALL_LAYOUT, phi::sr::SqrtKernel, float, double) {}
+
+
 
 #endif

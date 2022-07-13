@@ -40,12 +40,4 @@ void MeanAllGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(mean_all_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::MeanAllGradKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

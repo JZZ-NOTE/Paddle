@@ -18,11 +18,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/funcs/complex_functors.h"
 
-PD_REGISTER_KERNEL(eigh_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::EighGradKernel,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

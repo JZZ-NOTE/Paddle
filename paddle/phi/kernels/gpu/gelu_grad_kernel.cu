@@ -93,10 +93,4 @@ void GeluGradKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(gelu_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::GeluGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+

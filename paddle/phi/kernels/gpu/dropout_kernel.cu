@@ -51,11 +51,4 @@ void DropoutRawKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(dropout,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::DropoutRawKernel,
-                   float,
-                   double,
-                   phi::dtype::bfloat16,
-                   phi::dtype::float16) {}
+

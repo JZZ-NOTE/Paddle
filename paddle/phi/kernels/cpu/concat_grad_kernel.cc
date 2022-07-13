@@ -20,16 +20,4 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/concat_grad_kernel_impl.h"
 
-PD_REGISTER_KERNEL(concat_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ConcatGradKernel,
-                   double,
-                   float,
-                   bool,
-                   int64_t,
-                   int,
-                   uint8_t,
-                   phi::dtype::float16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

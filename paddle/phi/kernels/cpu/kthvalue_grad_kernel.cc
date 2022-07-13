@@ -158,11 +158,4 @@ void KthvalueGradKernel(const Context& dev_ctx,
 }
 }  // namespace phi
 
-PD_REGISTER_KERNEL(kthvalue_grad,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::KthvalueGradKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

@@ -578,14 +578,4 @@ void Pad3dKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(pad3d,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::Pad3dKernel,
-                   phi::dtype::float16,
-                   float,
-                   double,
-                   int,
-                   int64_t,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+

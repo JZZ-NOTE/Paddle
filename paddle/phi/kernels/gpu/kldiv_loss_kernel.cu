@@ -17,5 +17,4 @@
 #include "paddle/phi/backends/gpu/gpu_context.h"
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/kldiv_loss_kernel_impl.h"
-PD_REGISTER_KERNEL(
-    kldiv_loss, GPU, ALL_LAYOUT, phi::KLDivLossKernel, float, double) {}
+

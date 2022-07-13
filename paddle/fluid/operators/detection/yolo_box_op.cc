@@ -239,7 +239,7 @@ class YoloBoxOpMaker : public framework::OpProtoAndCheckerMaker {
 namespace ops = paddle::operators;
 DECLARE_INFER_SHAPE_FUNCTOR(yolo_box, YoloBoxInferShapeFunctor,
                             PD_INFER_META(phi::YoloBoxInferMeta));
-REGISTER_OPERATOR(
+REGISTER_OPERATOR__(
     yolo_box, ops::YoloBoxOp, ops::YoloBoxOpMaker,
     paddle::framework::EmptyGradOpMaker<paddle::framework::OpDesc>,
     paddle::framework::EmptyGradOpMaker<paddle::imperative::OpBase>,

@@ -32,32 +32,8 @@ void ShapeKernel(const Context& ctx,
 }  // namespace sr
 }  // namespace phi
 
-PD_REGISTER_KERNEL(shape_sr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sr::ShapeKernel,
-                   bool,
-                   int,
-                   int8_t,
-                   uint8_t,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(shape_sr,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sr::ShapeKernel,
-                   bool,
-                   int,
-                   int8_t,
-                   uint8_t,
-                   int64_t,
-                   float,
-                   double,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
 #endif

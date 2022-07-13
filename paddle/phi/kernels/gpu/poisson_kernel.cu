@@ -73,5 +73,4 @@ void PoissonKernel(const Context& ctx, const DenseTensor& x, DenseTensor* out) {
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    poisson, GPU, ALL_LAYOUT, phi::PoissonKernel, float, double) {}
+

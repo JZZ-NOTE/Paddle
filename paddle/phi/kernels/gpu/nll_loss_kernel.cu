@@ -112,5 +112,4 @@ void NllLossRawKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(
-    nll_loss, GPU, ALL_LAYOUT, phi::NllLossRawKernel, float, double) {}
+

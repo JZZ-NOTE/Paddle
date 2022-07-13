@@ -122,9 +122,4 @@ void DepthwiseConvKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(depthwise_conv2d,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::DepthwiseConvKernel,
-                   float,
-                   double) {}
+

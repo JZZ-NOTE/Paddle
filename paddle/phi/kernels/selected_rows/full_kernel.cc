@@ -39,35 +39,8 @@ void FullKernel(const Context& dev_ctx,
 }  // namespace sr
 }  // namespace phi
 
-PD_REGISTER_KERNEL(full_sr,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sr::FullKernel,
-                   float,
-                   double,
-                   uint8_t,
-                   int16_t,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::float16,
-                   phi::dtype::bfloat16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(full_sr,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::sr::FullKernel,
-                   float,
-                   double,
-                   uint8_t,
-                   int16_t,
-                   int,
-                   int64_t,
-                   bool,
-                   phi::dtype::float16,
-                   phi::dtype::complex<float>,
-                   phi::dtype::complex<double>) {}
+
 #endif

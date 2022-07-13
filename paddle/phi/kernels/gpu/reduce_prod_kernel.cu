@@ -33,11 +33,4 @@ void ProdRawKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(prod_raw,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ProdRawKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

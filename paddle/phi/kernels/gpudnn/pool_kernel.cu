@@ -290,23 +290,9 @@ using phi::dtype::float16;
 
 #ifdef PADDLE_WITH_HIP
 // MIOPEN do not support double
-PD_REGISTER_KERNEL(
-    pool2d, GPUDNN, ALL_LAYOUT, phi::Pool2dGPUDNNKernel, float, float16) {}
-PD_REGISTER_KERNEL(
-    pool3d, GPUDNN, ALL_LAYOUT, phi::Pool3dGPUDNNKernel, float, float16) {}
+
+
 #else
-PD_REGISTER_KERNEL(pool2d,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Pool2dGPUDNNKernel,
-                   float,
-                   double,
-                   float16) {}
-PD_REGISTER_KERNEL(pool3d,
-                   GPUDNN,
-                   ALL_LAYOUT,
-                   phi::Pool3dGPUDNNKernel,
-                   float,
-                   double,
-                   float16) {}
+
+
 #endif

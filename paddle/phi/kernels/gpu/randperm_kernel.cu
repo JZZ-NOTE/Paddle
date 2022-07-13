@@ -181,20 +181,6 @@ void RandpermKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(randperm_raw,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::RandpermRawKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
 
-PD_REGISTER_KERNEL(randperm,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::RandpermKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+
+

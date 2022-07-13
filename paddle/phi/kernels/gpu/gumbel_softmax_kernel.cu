@@ -177,5 +177,4 @@ struct GumbleNoiseGenerator<GPUContext, T> {
 }  // namespace phi
 #endif
 
-PD_REGISTER_KERNEL(
-    gumbel_softmax, GPU, ALL_LAYOUT, phi::GumbelSoftmaxKernel, float, double) {}
+

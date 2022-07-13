@@ -50,25 +50,7 @@ void ReverseArrayKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(reverse_array,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::ReverseArrayKernel,
-                   int,
-                   uint8_t,
-                   int64_t,
-                   bool,
-                   float,
-                   double) {}
+
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)
-PD_REGISTER_KERNEL(reverse_array,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::ReverseArrayKernel,
-                   int,
-                   uint8_t,
-                   int64_t,
-                   bool,
-                   float,
-                   double) {}
+
 #endif

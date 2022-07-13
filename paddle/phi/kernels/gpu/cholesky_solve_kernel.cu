@@ -131,11 +131,6 @@ class CholeskySolveFunctor<T, GPUContext> {
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(cholesky_solve,  // cuda_only
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::CholeskySolveKernel,
-                   float,
-                   double) {}
+
 
 #endif  // not PADDLE_WITH_HIP

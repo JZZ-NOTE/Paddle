@@ -244,18 +244,6 @@ void EmbeddingSparseGradKernel(const Context& ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(embedding_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::EmbeddingGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
 
-PD_REGISTER_KERNEL(embedding_sparse_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::EmbeddingSparseGradKernel,
-                   float,
-                   double,
-                   phi::dtype::float16) {}
+
+

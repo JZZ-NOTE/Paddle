@@ -122,11 +122,4 @@ void MaxPoolKernel(const Context& dev_ctx,
 }  // namespace sparse
 }  // namespace phi
 
-PD_REGISTER_KERNEL(sparse_maxpool,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::sparse::MaxPoolKernel,
-                   float,
-                   double) {
-  kernel->InputAt(0).SetDataLayout(phi::DataLayout::SPARSE_COO);
-}
+

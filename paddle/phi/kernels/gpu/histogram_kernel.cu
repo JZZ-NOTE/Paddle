@@ -149,11 +149,4 @@ void HistogramKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(histogram,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::HistogramKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+

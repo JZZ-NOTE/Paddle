@@ -965,19 +965,9 @@ void BatchNormDoubleGradKernel(const Context &ctx,
 }  // namespace phi
 
 #ifdef PADDLE_WITH_HIP
-PD_REGISTER_KERNEL(batch_norm_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::BatchNormGradKernel,
-                   float,
-                   phi::dtype::float16) {}
 
-PD_REGISTER_KERNEL(batch_norm_grad_raw,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::BatchNormGradRawKernel,
-                   float,
-                   phi::dtype::float16) {}
+
+
 #else
 PD_REGISTER_KERNEL(batch_norm_grad,
                    GPU,
@@ -1010,17 +1000,7 @@ PD_REGISTER_KERNEL(batch_norm_grad_raw,
 #endif
 
 #ifdef PADDLE_WITH_HIP
-PD_REGISTER_KERNEL(batch_norm_grad_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::BatchNormDoubleGradKernel,
-                   float,
-                   double) {}
+
 #else
-PD_REGISTER_KERNEL(batch_norm_grad_grad,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::BatchNormDoubleGradKernel,
-                   float,
-                   double) {}
+
 #endif

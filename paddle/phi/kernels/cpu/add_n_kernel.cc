@@ -67,12 +67,4 @@ void AddNKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(add_n,
-                   CPU,
-                   ALL_LAYOUT,
-                   phi::AddNKernel,
-                   float,
-                   double,
-                   int,
-                   phi::dtype::bfloat16,
-                   int64_t) {}
+

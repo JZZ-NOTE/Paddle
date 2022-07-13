@@ -17,5 +17,4 @@
 #include "paddle/phi/kernels/huber_loss_kernel.h"
 #include "paddle/phi/kernels/impl/huber_loss_kernel_impl.h"
 
-PD_REGISTER_KERNEL(
-    huber_loss, GPU, ALL_LAYOUT, phi::HuberLossKernel, float, double) {}
+

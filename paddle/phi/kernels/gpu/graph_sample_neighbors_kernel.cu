@@ -459,9 +459,4 @@ void GraphSampleNeighborsKernel(
 
 }  // namespace phi
 
-PD_REGISTER_KERNEL(graph_sample_neighbors,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::GraphSampleNeighborsKernel,
-                   int,
-                   int64_t) {}
+

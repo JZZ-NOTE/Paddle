@@ -154,11 +154,4 @@ void BincountKernel(const Context& dev_ctx,
 }
 }  // namespace phi
 
-PD_REGISTER_KERNEL(bincount,
-                   GPU,
-                   ALL_LAYOUT,
-                   phi::BincountKernel,
-                   float,
-                   double,
-                   int,
-                   int64_t) {}
+
