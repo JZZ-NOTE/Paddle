@@ -55,6 +55,9 @@ file(APPEND ${pybind_file} "USE_OP_ITSELF__(gather);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(norm);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(reshape);\n")
 
+#fluid cuda kernel
+file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(nearest_interp);\n")
+
 nv_test(test_tensorrt_engine_op SRCS tensorrt_engine_op_test.cc
   DEPS tensorrt_engine_op
   analysis)
