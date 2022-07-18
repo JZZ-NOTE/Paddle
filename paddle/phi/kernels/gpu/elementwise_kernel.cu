@@ -69,6 +69,20 @@ using bfloat16 = phi::dtype::bfloat16;
 using complex64 = ::phi::dtype::complex<float>;
 using complex128 = ::phi::dtype::complex<double>;
 
+PD_REGISTER_KERNEL(add_raw,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::AddRawKernel,
+                   float,
+                   double,
+                   int16_t,
+                   int,
+                   int64_t,
+                   float16,
+                   bfloat16,
+                   complex64,
+                   complex128) {}
+
 
 
 

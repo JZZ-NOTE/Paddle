@@ -145,4 +145,13 @@ void AddNKernel(const Context &dev_ctx,
 
 }  // namespace phi
 
-
+PD_REGISTER_KERNEL(add_n,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::AddNKernel,
+                   float,
+                   double,
+                   int,
+                   int64_t,
+                   phi::dtype::bfloat16,
+                   phi::dtype::float16) {}

@@ -20,6 +20,12 @@ limitations under the License. */
 #include "paddle/phi/common/complex.h"
 #include "paddle/phi/kernels/impl/matmul_kernel_impl.h"
 
-
+PD_REGISTER_KERNEL(matmul_with_flatten,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::MatmulWithFlattenKernel,
+                   float,
+                   double,
+                   phi::dtype::float16) {}
 
 

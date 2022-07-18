@@ -14,7 +14,6 @@ file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(matmul);\n")
 # plate_rec
 file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(im2sequence);\n")
 file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(gru);\n")
-file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(sum);\n")
 file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(top_k);\n")
 # library
 file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(density_prior_box);\n")
@@ -46,14 +45,15 @@ file(APPEND ${pybind_file} "USE_OP_ITSELF__(softmax);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(yolo_box);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(batch_norm);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(elementwise_div);\n")
+file(APPEND ${pybind_file} "USE_OP_ITSELF__(elementwise_add);\n")
 # file(APPEND ${pybind_file} "USE_OP_ITSELF__(nearest_interp_v2);\n")
 # face_reco
-file(APPEND ${pybind_file} "USE_OP_ITSELF__(elementwise_add);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(mul);\n")
 # all object detect
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(gather);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(norm);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(reshape);\n")
+file(APPEND ${pybind_file} "USE_OP_ITSELF__(sum);\n")
 
 #fluid cuda kernel
 file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(nearest_interp);\n")
