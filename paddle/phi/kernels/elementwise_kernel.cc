@@ -106,13 +106,17 @@ using complex64 = ::phi::dtype::complex<float>;
 using complex128 = ::phi::dtype::complex<double>;
 
 
-
-
-
-
-
-
-
+PD_REGISTER_KERNEL(add,
+                   CPU,
+                   ALL_LAYOUT,
+                   phi::AddKernel,
+                   float,
+                   double,
+                   int16_t,
+                   int,
+                   int64_t,
+                   complex64,
+                   complex128) {}
 
 
 #if defined(PADDLE_WITH_CUDA) || defined(PADDLE_WITH_HIP)

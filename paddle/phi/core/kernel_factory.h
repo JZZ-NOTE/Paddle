@@ -272,6 +272,11 @@ class KernelFactory {
       jzz_flag = false;
     } 
     LOG(INFO) << "JZZ: " << TransToPhiKernelName(op_type);
+    // if(kernels_.find(TransToPhiKernelName(op_type)) != kernels_.end()){
+    //   LOG(INFO) << "JZZ: True";
+    // }else{
+    //   LOG(INFO) << "JZZ: False";
+    // }
     return kernels_.find(TransToPhiKernelName(op_type)) != kernels_.end();
   }
 

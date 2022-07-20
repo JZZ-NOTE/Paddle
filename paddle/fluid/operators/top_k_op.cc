@@ -147,7 +147,7 @@ REGISTER_OPERATOR__(top_k, ops::TopkOp, ops::TopkOpMaker,
 
 REGISTER_OPERATOR(top_k_grad, ops::TopkOpGrad);
 
-REGISTER_OP_CPU_KERNEL(top_k,
+REGISTER_OP_CPU_KERNEL__(top_k,
                        ops::TopkKernel<paddle::platform::CPUPlace, float>,
                        ops::TopkKernel<paddle::platform::CPUPlace, double>);
 
