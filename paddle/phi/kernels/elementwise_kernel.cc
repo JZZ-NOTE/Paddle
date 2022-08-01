@@ -133,4 +133,17 @@ PD_REGISTER_KERNEL(add,
                    phi::dtype::bfloat16,
                    complex64,
                    complex128) {}
+PD_REGISTER_KERNEL(multiply,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::MultiplyKernel,
+                   float,
+                   double,
+                   int,
+                   int64_t,
+                   bool,
+                   phi::dtype::float16,
+                   phi::dtype::bfloat16,
+                   complex64,
+                   complex128) {}
 #endif

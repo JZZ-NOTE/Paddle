@@ -83,6 +83,20 @@ PD_REGISTER_KERNEL(add_raw,
                    complex64,
                    complex128) {}
 
+PD_REGISTER_KERNEL(multiply_raw,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::MultiplyRawKernel,
+                   float,
+                   double,
+                   int,
+                   int64_t,
+                   bool,
+                   float16,
+                   complex64,
+                   complex128,
+                   bfloat16) {}
+
 
 
 
