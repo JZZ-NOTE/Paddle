@@ -1290,7 +1290,9 @@ void OperatorWithKernel::RunImpl(const Scope& scope,
   // phase
   phi::KernelKey pt_kernel_key;
   std::string pt_kernel_name;
+  LOG(INFO) << "JZZ OP: " << type_;
   if (phi::KernelFactory::Instance().HasCompatiblePhiKernel(type_)) {
+    LOG(INFO) << "Run Phi Kernel";
     if (kernel_signature_ == nullptr || pt_kernel_ == nullptr) {
       kernel_signature_.reset(new phi::KernelSignature(
           std::move(GetExpectedPhiKernelArgs(exe_ctx))));
@@ -1417,6 +1419,7 @@ void OperatorWithKernel::RunImpl(const Scope& scope,
     }
   }
   if (!run_phi_kernel_) {
+    LOG(INFO) << "Run !Phi Kernel";
     if (kernel_type_.get() == nullptr || kernel_func_.get() == nullptr) {
       ChooseKernel(exe_ctx);
       dev_ctx = pool.Get(kernel_type_->place_);
