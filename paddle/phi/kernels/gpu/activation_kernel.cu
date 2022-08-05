@@ -203,3 +203,22 @@ PD_REGISTER_ACTIVATION_KERNEL(round, RoundKernel)
 PD_REGISTER_ACTIVATION_KERNEL(floor, FloorKernel)
 PD_REGISTER_ACTIVATION_KERNEL(ceil, CeilKernel)
 
+PD_REGISTER_KERNEL(pow,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::PowKernel,
+                   float,
+                   double,
+                   int,
+                   int64_t,
+                   phi::dtype::float16) {}
+
+PD_REGISTER_KERNEL(log,                        
+                    GPU,                         
+                    ALL_LAYOUT,                  
+                    phi::LogKernel,                   
+                    float,                       
+                    double,                      
+                    phi::dtype::float16,         
+                    phi::dtype::bfloat16) {}
+

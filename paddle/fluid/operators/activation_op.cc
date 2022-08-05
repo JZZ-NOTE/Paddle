@@ -1758,7 +1758,7 @@ REGISTER_OP_CPU_KERNEL(
 
 /* ==========================   pow register  ============================ */
 
-REGISTER_OPERATOR(
+REGISTER_OPERATOR__(
     pow, ops::PowOp, ops::PowOpMaker, ops::ActivationOpInferVarType,
     ops::PowGradOpMaker<paddle::framework::OpDesc>,
     ops::PowGradOpMaker<paddle::imperative::OpBase>,
@@ -1781,7 +1781,7 @@ REGISTER_OPERATOR(exp_grad, ops::ActivationOpGrad,
                   ops::ActivationGradOpInplaceInferer);
 
 /* ==========================  Log register ==================================*/
-REGISTER_OPERATOR(
+REGISTER_OPERATOR__(
     log, ops::ActivationOp, ops::LogOpMaker, ops::ActivationOpInferVarType,
     ops::ActivationGradOpMaker<ops::LogGradFunctor<float>::FwdDeps(),
                                paddle::framework::OpDesc>,

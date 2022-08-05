@@ -36,9 +36,9 @@ file(APPEND ${pybind_file} "USE_OP_ITSELF__(conv2d);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(elementwise_mul);\n")
 # new plate
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(deformable_conv);\n")
-#file(APPEND ${pybind_file} "USE_OP_ITSELF__(pow);\n")
+file(APPEND ${pybind_file} "USE_OP_ITSELF__(pow);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(clip);\n")
-#file(APPEND ${pybind_file} "USE_OP_ITSELF__(log);\n")
+file(APPEND ${pybind_file} "USE_OP_ITSELF__(log);\n")
 # resnet50
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(softmax);\n")
 # human_dec

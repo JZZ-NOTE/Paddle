@@ -83,6 +83,20 @@ void FullLikeKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-
+PD_REGISTER_KERNEL(full,
+                   CPU,
+                   ALL_LAYOUT,
+                   phi::FullKernel,
+                   float,
+                   double,
+                   uint8_t,
+                   int16_t,
+                   int,
+                   int64_t,
+                   bool,
+                   phi::dtype::float16,
+                   phi::dtype::bfloat16,
+                   phi::dtype::complex<float>,
+                   phi::dtype::complex<double>) {}
 
 
