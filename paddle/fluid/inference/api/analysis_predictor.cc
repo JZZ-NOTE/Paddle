@@ -32,6 +32,7 @@
 #include "paddle/fluid/framework/naive_executor.h"
 #include "paddle/fluid/framework/op_proto_maker.h"
 #include "paddle/fluid/framework/scope.h"
+#include "paddle/fluid/framework/transfer_scope_cache.h"
 #include "paddle/fluid/framework/var_type_traits.h"
 #include "paddle/fluid/framework/version.h"
 #include "paddle/fluid/inference/analysis/helper.h"
@@ -1662,6 +1663,15 @@ AnalysisPredictor::~AnalysisPredictor() {
                               "./profile.log");
   }
   if (sub_scope_) {
+    if (framework::global_transfer_scope_key().find(sub_scope_) !=
+        framework::global_transfer_scope_key().end()) {
+      auto scope_key_set = framework::global_transfer_scope_key()[sub_scope_];
+      for (auto iter = scope_key_set.begin(); iter != scope_key_set.end();
+           iter++) {
+        framework::global_transfer_data_cache().erase(*iter);
+      }
+      framework::global_transfer_scope_key().erase(sub_scope_);
+    }
     scope_->DeleteScope(sub_scope_);
   }
 
@@ -1774,7 +1784,7 @@ USE_TRT_CONVERTER(shuffle_channel);
 USE_TRT_CONVERTER(swish);
 USE_TRT_CONVERTER(group_norm);
 USE_TRT_CONVERTER(instance_norm);
-//USE_TRT_CONVERTER(layer_norm);
+// USE_TRT_CONVERTER(layer_norm);
 USE_TRT_CONVERTER(gelu);
 USE_TRT_CONVERTER(multihead_matmul);
 USE_TRT_CONVERTER(fused_embedding_eltwise_layernorm);
@@ -1784,11 +1794,11 @@ USE_TRT_CONVERTER(scale);
 USE_TRT_CONVERTER(stack);
 USE_TRT_CONVERTER(clip);
 USE_TRT_CONVERTER(gather);
-//USE_TRT_CONVERTER(anchor_generator);
+// USE_TRT_CONVERTER(anchor_generator);
 USE_TRT_CONVERTER(yolo_box);
-//USE_TRT_CONVERTER(roi_align);
-//USE_TRT_CONVERTER(affine_channel);
-//USE_TRT_CONVERTER(multiclass_nms);
+// USE_TRT_CONVERTER(roi_align);
+// USE_TRT_CONVERTER(affine_channel);
+// USE_TRT_CONVERTER(multiclass_nms);
 USE_TRT_CONVERTER(multiclass_nms3);
 USE_TRT_CONVERTER(nearest_interp);
 USE_TRT_CONVERTER(nearest_interp_v2);
