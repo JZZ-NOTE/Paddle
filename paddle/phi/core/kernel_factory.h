@@ -264,19 +264,6 @@ class KernelFactory {
   KernelNameMap& kernels() { return kernels_; }
 
   bool HasCompatiblePhiKernel(const std::string& op_type) const {
-    static bool jzz_flag = true;
-    if(jzz_flag){
-      for(auto iter=kernels_.begin(); iter!=kernels_.end(); iter++){
-        LOG(INFO) << "JZZ Phi kernels: " << iter->first;
-      }   
-      jzz_flag = false;
-    } 
-    LOG(INFO) << "JZZ: " << TransToPhiKernelName(op_type);
-    // if(kernels_.find(TransToPhiKernelName(op_type)) != kernels_.end()){
-    //   LOG(INFO) << "JZZ: True";
-    // }else{
-    //   LOG(INFO) << "JZZ: False";
-    // }
     return kernels_.find(TransToPhiKernelName(op_type)) != kernels_.end();
   }
 

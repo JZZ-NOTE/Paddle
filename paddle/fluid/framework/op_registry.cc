@@ -23,9 +23,7 @@ std::unique_ptr<OperatorBase> OpRegistry::CreateOp(
     const std::string& type, const VariableNameMap& inputs,
     const VariableNameMap& outputs, const AttributeMap& attrs,
     bool attr_check) {
-  LOG(INFO) << "JZZ OP: " << type;
   auto& info = OpInfoMap::Instance().Get(type);
-  LOG(INFO) << "JZZ OP2: " << type;
   if (attr_check && info.Checker() != nullptr) {
     auto tmp_attrs = attrs;
     info.Checker()->Check(&tmp_attrs);
