@@ -18,4 +18,18 @@
 #include "paddle/phi/core/kernel_registry.h"
 #include "paddle/phi/kernels/impl/squeeze_kernel_impl.h"
 
-
+PD_REGISTER_KERNEL(squeeze,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::SqueezeKernel,
+                   float,
+                   double,
+                   phi::dtype::bfloat16,
+                   phi::dtype::float16,
+                   bool,
+                   int,
+                   uint8_t,
+                   int8_t,
+                   int64_t,
+                   phi::dtype::complex<float>,
+                   phi::dtype::complex<double>) {}

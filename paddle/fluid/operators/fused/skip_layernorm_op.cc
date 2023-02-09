@@ -87,5 +87,5 @@ This op is used for skip_layernorm_fuse_pass, which fuse op pattern as followed.
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OP_WITHOUT_GRADIENT(skip_layernorm, ops::SkipLayerNormOp,
+REGISTER_OP_WITHOUT_GRADIENT__(skip_layernorm, ops::SkipLayerNormOp,
                              ops::SkipLayerNormOpMaker);

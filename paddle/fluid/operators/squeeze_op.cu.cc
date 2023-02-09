@@ -17,7 +17,7 @@ limitations under the License. */
 namespace ops = paddle::operators;
 namespace plat = paddle::platform;
 
-REGISTER_OP_CUDA_KERNEL(
+REGISTER_OP_CUDA_KERNEL__(
     squeeze, ops::SqueezeKernel<paddle::platform::CUDADeviceContext, float>,
     ops::SqueezeKernel<paddle::platform::CUDADeviceContext, double>,
     ops::SqueezeKernel<paddle::platform::CUDADeviceContext, plat::float16>,

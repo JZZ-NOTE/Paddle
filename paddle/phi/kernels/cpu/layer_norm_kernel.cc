@@ -141,4 +141,5 @@ void LayerNormKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-
+PD_REGISTER_KERNEL(
+    layer_norm, CPU, ALL_LAYOUT, phi::LayerNormKernel, float, double) {}

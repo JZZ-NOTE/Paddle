@@ -336,7 +336,7 @@ namespace ops = paddle::operators;
 DECLARE_INFER_SHAPE_FUNCTOR(squeeze2, SqueezeInferShapeFunctor,
                             PD_INFER_META(phi::SqueezeInferMeta));
 
-REGISTER_OPERATOR(squeeze, ops::SqueezeOp, ops::SqueezeOpMaker,
+REGISTER_OPERATOR__(squeeze, ops::SqueezeOp, ops::SqueezeOpMaker,
                   ops::SqueezeGradOpMaker<paddle::framework::OpDesc>,
                   ops::SqueezeGradOpMaker<paddle::imperative::OpBase>);
 REGISTER_OPERATOR(squeeze_grad, ops::SqueezeGradOp,
@@ -344,7 +344,7 @@ REGISTER_OPERATOR(squeeze_grad, ops::SqueezeGradOp,
                   ops::SqueezeDoubleGradOpMaker<paddle::imperative::OpBase>,
                   ops::SqueezeGradNoNeedBufferVarsInferer);
 
-REGISTER_OPERATOR(squeeze2, ops::Squeeze2Op, ops::Squeeze2OpMaker,
+REGISTER_OPERATOR__(squeeze2, ops::Squeeze2Op, ops::Squeeze2OpMaker,
                   ops::Squeeze2GradOpMaker<paddle::framework::OpDesc>,
                   ops::Squeeze2GradOpMaker<paddle::imperative::OpBase>,
                   ops::SqueezeInplaceInferer, SqueezeInferShapeFunctor);

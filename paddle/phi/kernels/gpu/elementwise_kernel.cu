@@ -96,17 +96,15 @@ PD_REGISTER_KERNEL(multiply_raw,
                    complex64,
                    complex128,
                    bfloat16) {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+PD_REGISTER_KERNEL(divide_raw,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::DivideRawKernel,
+                   float,
+                   double,
+                   int,
+                   int64_t,
+                   float16,
+                   bfloat16,
+                   complex64,
+                   complex128) {}

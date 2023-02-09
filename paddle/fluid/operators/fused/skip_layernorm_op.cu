@@ -60,6 +60,6 @@ class SkipLayerNormKernel : public framework::OpKernel<T> {
 }  // namespace paddle
 
 namespace ops = paddle::operators;
-REGISTER_OP_CUDA_KERNEL(
+REGISTER_OP_CUDA_KERNEL__(
     skip_layernorm,
     ops::SkipLayerNormKernel<paddle::platform::CUDADeviceContext, float>);

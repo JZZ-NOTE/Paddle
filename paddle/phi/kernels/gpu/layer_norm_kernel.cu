@@ -203,9 +203,27 @@ void LayerNormKernel(const Context &dev_ctx,
 
 #ifdef PADDLE_WITH_HIP
 // MIOPEN do not support double
-
+PD_REGISTER_KERNEL(layer_norm,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::LayerNormKernel,
+                   float,
+                   phi::dtype::float16) {}
 #elif CUDNN_VERSION_MIN(8, 1, 0)
-
+PD_REGISTER_KERNEL(layer_norm,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::LayerNormKernel,
+                   float,
+                   double,
+                   phi::dtype::float16,
+                   phi::dtype::bfloat16) {}
 #else
-
+PD_REGISTER_KERNEL(layer_norm,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::LayerNormKernel,
+                   float,
+                   double,
+                   phi::dtype::float16) {}
 #endif
