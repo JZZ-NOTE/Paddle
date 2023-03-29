@@ -106,7 +106,8 @@ function(select_nvcc_arch_flags out_variable out_arch_bin)
       "Turing"
       "Ampere"
       "All"
-      "Manual")
+      "Manual"
+      "Lovelace")
   set(archs_name_default "Auto")
   list(APPEND archs_names "Auto")
 
@@ -175,6 +176,8 @@ function(select_nvcc_arch_flags out_variable out_arch_bin)
         set(cuda_arch_bin "80 86")
       endif()
     endif()
+  elseif(${CUDA_ARCH_NAME} STREQUAL "Lovelace")
+    set(cuda_arch_bin "89")
   elseif(${CUDA_ARCH_NAME} STREQUAL "All")
     set(cuda_arch_bin ${paddle_known_gpu_archs})
   elseif(${CUDA_ARCH_NAME} STREQUAL "Auto")
@@ -260,8 +263,13 @@ elseif(${CMAKE_CUDA_COMPILER_VERSION} LESS 11.2) # CUDA 11.0/11.1
   set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -D_MWAITXINTRIN_H_INCLUDED")
   set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -D__STRICT_ANSI__")
   set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Wno-deprecated-gpu-targets")
-elseif(${CMAKE_CUDA_COMPILER_VERSION} LESS 12.0) # CUDA 11.2+
+elseif(${CMAKE_CUDA_COMPILER_VERSION} LESS 11.8) # CUDA 11.2-11.7
   set(paddle_known_gpu_archs "${paddle_known_gpu_archs11} 86")
+  set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -D_MWAITXINTRIN_H_INCLUDED")
+  set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -D__STRICT_ANSI__")
+  set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Wno-deprecated-gpu-targets")
+elseif(${CMAKE_CUDA_COMPILER_VERSION} LESS 12.0) # CUDA 11.8/11.9
+  set(paddle_known_gpu_archs "${paddle_known_gpu_archs11} 86 89")
   set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -D_MWAITXINTRIN_H_INCLUDED")
   set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -D__STRICT_ANSI__")
   set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Wno-deprecated-gpu-targets")
