@@ -6,7 +6,7 @@ file(APPEND ${pybind_file} "USE_OP__(load);\n")
 #file(APPEND ${pybind_file} "USE_OP_ITSELF__(squeeze2);\n")
 file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(squeeze);\n")
 #file(APPEND ${pybind_file} "USE_OP__(elementwise_div);\n")
-file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(slice);\n")
+#file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(slice);\n")
 file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(expand);\n")
 file(APPEND ${pybind_file} "USE_CPU_ONLY_OP__(multiclass_nms);\n")
 file(APPEND ${pybind_file} "USE_CPU_ONLY_OP__(multiclass_nms2);\n")
@@ -66,6 +66,10 @@ file(APPEND ${pybind_file} "USE_OP_ITSELF__(sum);\n")
 
 #fluid cuda kernel
 file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(nearest_interp);\n")
+
+# 2023/3/30
+file(APPEND ${pybind_file} "USE_OP_ITSELF__(top_k_v2);\n")
+file(APPEND ${pybind_file} "USE_OP_ITSELF__(slice);;\n")
 
 nv_test(
   test_tensorrt_engine_op

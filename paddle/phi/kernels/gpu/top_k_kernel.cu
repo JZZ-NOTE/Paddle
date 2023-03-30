@@ -318,4 +318,12 @@ void TopkKernel(const Context& dev_ctx,
 
 }  // namespace phi
 
-
+PD_REGISTER_KERNEL(top_k,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::TopkKernel,
+                   float,
+                   double,
+                   int,
+                   int64_t,
+                   phi::dtype::float16) {}
