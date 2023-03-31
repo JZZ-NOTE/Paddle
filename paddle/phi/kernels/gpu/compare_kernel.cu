@@ -86,11 +86,13 @@ inline void CompareAllKernelImpl(const Context& ctx,
 
 }  // namespace phi
 
-
-
-
-
-
-
-
-
+PD_REGISTER_KERNEL(not_equal,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::NotEqualKernel,
+                   bool,
+                   int16_t,
+                   int,
+                   int64_t,
+                   float,
+                   double) {}

@@ -47,4 +47,14 @@ void GatherNdKernel(const Context &ctx,
 
 }  // namespace phi
 
-
+PD_REGISTER_KERNEL(gather_nd,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::GatherNdKernel,
+                   float,
+                   double,
+                   int64_t,
+                   int,
+                   int16_t,
+                   bool,
+                   phi::dtype::float16) {}

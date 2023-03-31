@@ -75,4 +75,13 @@ void WhereIndexKernel(const Context &dev_ctx,
 }
 }  // namespace phi
 
-
+PD_REGISTER_KERNEL(where_index,
+                   GPU,
+                   ALL_LAYOUT,
+                   phi::WhereIndexKernel,
+                   int64_t,
+                   int,
+                   int16_t,
+                   bool,
+                   float,
+                   double) {}

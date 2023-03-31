@@ -70,6 +70,9 @@ file(APPEND ${pybind_file} "USE_CUDA_ONLY_OP__(nearest_interp);\n")
 # 2023/3/30
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(top_k_v2);\n")
 file(APPEND ${pybind_file} "USE_OP_ITSELF__(slice);;\n")
+file(APPEND ${pybind_file} "USE_OP_ITSELF__(not_equal);;\n")
+file(APPEND ${pybind_file} "USE_OP_ITSELF__(where_index);;\n")
+file(APPEND ${pybind_file} "USE_OP_ITSELF__(gather_nd);;\n")
 
 nv_test(
   test_tensorrt_engine_op

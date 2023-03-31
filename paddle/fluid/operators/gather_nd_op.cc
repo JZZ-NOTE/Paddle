@@ -135,7 +135,7 @@ DECLARE_INFER_SHAPE_FUNCTOR(gather_nd, GatherNdInferShapeFunctor,
 DECLARE_INFER_SHAPE_FUNCTOR(gather_nd_grad, GatherNdGradInferShapeFunctor,
                             PD_INFER_META(phi::GatherNdGradInferMeta));
 
-REGISTER_OPERATOR(gather_nd, ops::GatherNdOp, ops::GatherNdOpMaker,
+REGISTER_OPERATOR__(gather_nd, ops::GatherNdOp, ops::GatherNdOpMaker,
                   ops::GatherNdGradOpMaker<paddle::framework::OpDesc>,
                   ops::GatherNdGradOpMaker<paddle::imperative::OpBase>,
                   GatherNdInferShapeFunctor);
