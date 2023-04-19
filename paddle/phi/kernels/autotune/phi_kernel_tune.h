@@ -20,6 +20,11 @@
 #include "paddle/phi/core/kernel_factory.h"
 #include "paddle/phi/kernels/autotune/gpu_timer.h"
 
+namespace paddle {
+namespace framework {
+class OperatorBase;
+}  // namespace framework
+}  // namespace paddle
 class PhiKernelTuner {
  public:
   explicit PhiKernelTuner(phi::KernelContext* ctx) : ctx_(ctx) {}
@@ -35,24 +40,20 @@ class PhiKernelTuner {
         0,
         phi::errors::InvalidArgument(
             "kernel num must be greater than 0, now is %d", kernels_.size()));
-
     std::lock_guard<std::mutex> lock(mutex_);
-    PADDLE_ENFORCE_GT(
-        kernels_.size(),
-        0,
-        phi::errors::InvalidArgument(
-            "kernel num must be greater than 0, now is %d", kernels_.size()));
     size_t best_idx = 0;
     float min_time = std::numeric_limits<float>::max();
 
     // Time cost test estabulished in default stream.
     for (size_t i = 0; i < kernels_.size(); ++i) {
       auto time = RunAndMeasureKernel(kernels_[i].get(), ctx_);
+      LOG(INFO) << "JZZ Run PhiKernelTune " << i << " time: " << time;
       if (time < min_time) {
         min_time = time;
         best_idx = i;
       }
     }
+    LOG(INFO) << "JZZ Run best_idx: " << best_idx;
     return std::move(kernels_[best_idx]);
   }
 
@@ -88,3 +89,67 @@ class PhiKernelTuner {
     return time_cost;
   }
 };
+
+// class OpsTuner {
+//  public:
+//   explicit OpsTuner(paddle::framework::Scope* scope) : scope_(scope) {}
+//   virtual ~OpsTuner() {}
+
+//   void AddPhiKernel(std::unique_ptr<phi::Kernel>&& kernel) {
+//     kernels_.push_back(std::forward<std::unique_ptr<phi::Kernel>>(kernel));
+//   }
+
+//   std::string Run() {
+//     PADDLE_ENFORCE_GT(
+//         ops_.size(),
+//         0,
+//         phi::errors::InvalidArgument(
+//             "Operator num must be greater than 0, now is %d", ops_.size()));
+
+//     std::lock_guard<std::mutex> lock(mutex_);
+//     size_t best_idx = 0;
+//     float min_time = std::numeric_limits<float>::max();
+
+//     // Time cost test estabulished in default stream.
+//     for (size_t i = 0; i < ops_.size(); ++i) {
+//       auto time = RunAndMeasureKernel(kernels_[i].get(), ctx_);
+//       if (time < min_time) {
+//         min_time = time;
+//         best_idx = i;
+//       }
+//     }
+//     return std::move(kernels_[best_idx]);
+//   }
+
+//  private:
+//   std::vector<std::pair<std::string, std::vector<std::unique_ptr<OperatorBase>>>> ops_;
+//   paddle::framework::Scope* scope_;
+//   mutable std::mutex mutex_;
+
+//   float RunAndMeasureOps(phi::Kernel* kernel, phi::KernelContext* ctx) {
+//     // Regard 1st run as warmup, judge the compare result by the time cost
+//     // of rest cycles.
+//     constexpr int repeats = 6;
+//     phi::GpuTimer timer;
+//     float time_cost = 0;
+
+//     paddle::platform::DeviceContextPool& pool =
+//         paddle::platform::DeviceContextPool::Instance();
+//     paddle::platform::CUDAPlace place(paddle::platform::GetCurrentDeviceId());
+//     auto* dev_ctx = static_cast<phi::GPUContext*>(pool.Get(place));
+
+//     const auto& stream = dev_ctx->stream();
+
+//     dev_ctx->Wait();
+//     for (int i = 0; i < repeats; ++i) {
+//       timer.Start(stream);
+//       (*kernel)(ctx);
+//       timer.Stop(stream);
+//       auto time = timer.ElapsedTime();
+//       if (i > 0) {
+//         time_cost += time;
+//       }
+//     }
+//     return time_cost;
+//   }
+// };

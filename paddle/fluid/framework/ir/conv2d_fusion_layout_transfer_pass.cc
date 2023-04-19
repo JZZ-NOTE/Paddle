@@ -195,6 +195,47 @@ void Conv2dFusionLayoutTransferPass::ApplyImpl(ir::Graph *graph) const {
   for (auto *op_node : op_nodes) {
     CHECK_EQ(op_node->IsOp(), true);
     if (cuDNNIsValid(op_node)) {
+      auto *op_desc = op_node->Op();
+      if (cutlass_enable && CutlassIsValid(op_node)) {
+        op_desc->SetAttr("use_cutlass", true);
+        // op_desc->SetType("conv2d_fusion_cutlass");
+      }
+      op_desc->Flush();
+      
+      // // create NHWC op
+      // framework::OpDesc op_desc_nhwc(*op_desc);
+      // op_desc_nhwc->SetAttr("data_format", std::string{"NHWC"});
+      // // create transposed weights for NHWC op
+      // auto filter_names = op_desc_nhwc->Input("Filter");
+      // std::vector<std::string> trans_filter_names;
+      // for (const auto &filter_name : filter_names) {
+      //   std::string trans_filter_name = filter_name + "_transpose";
+      //   trans_filter_names.push_back(trans_filter_name);
+      //   auto* trans_filter = scope->FindVar(trans_filter_name);
+      //   if(!trans_filter) {
+      //     auto *filter_var = scope->FindLocalVar(filter_name);
+      //     auto *filter_tensor = filter_var->GetMutable<phi::DenseTensor>();
+
+      //     trans_filter = scope->Var(filter_name + "_transpose");
+      //     auto* trans_filter_tensor = trans_filter->GetMutable<phi::DenseTensor>();
+
+      //     framework::TransDataLayout(phi::DataLayout::kNCHW,
+      //                               phi::DataLayout::kNHWC,
+      //                               phi::CPUPlace{},
+      //                               filter_tensor,
+      //                               trans_filter_tensor);
+      //   }
+      // }
+      // // link transposed op to NHWC op
+      // op_desc_nhwc->SetInput("Filter", trans_filter_names);
+      // op_desc_nhwc->Flush();
+    }
+  }
+  
+
+  for (auto *op_node : op_nodes) {
+    CHECK_EQ(op_node->IsOp(), true);
+    if (cuDNNIsValid(op_node)) {
       valid_ops.insert(op_node);
       auto *op_desc = op_node->Op();
       op_desc->SetAttr("data_format", std::string{"NHWC"});
